@@ -30,10 +30,10 @@ void nuevoPedido(vector<Pedido> &listaPe, vector<Plato> listaPl, int numeroP){
                 break;
             }
             else if (i==listaPl.size()-1){
-                cout<<listaPl.size()+2<<"-Salir"<<endl;
+                cout<<listaPl.size()+1<<"-Salir"<<endl;
                 while(true){
                     cin>>indicePl;
-                    if(indicePl==listaPl.size()+2){
+                    if(indicePl==listaPl.size()+1){
                         if (cantPl==0){
                             cout<<"Por favor ingrese un plato"<<endl;
                         }
@@ -42,7 +42,7 @@ void nuevoPedido(vector<Pedido> &listaPe, vector<Plato> listaPl, int numeroP){
                             break;
                         }
                     }
-                    else{
+                    else if(indicePl<=listaPl.size()){
                         
                         platop.id=indicePl;
                         cout<<"Seleccione una cantidad"<<endl;
@@ -52,12 +52,14 @@ void nuevoPedido(vector<Pedido> &listaPe, vector<Plato> listaPl, int numeroP){
                                 platop.nombre=listaPl[ii].nombre;
                                 platop.precio=listaPl[ii].precio*platop.cantidad;
                                 nuevop.plato.push_back(platop);
-                                cout<<"recopla"<<endl;
                                 
                             }
                         }
                         cantPl++;
                         break;
+                    }
+                    else{
+                        cout<<"Ingrese un valor valido"<<endl;
                     }
                     
                 }
@@ -71,20 +73,33 @@ void nuevoPedido(vector<Pedido> &listaPe, vector<Plato> listaPl, int numeroP){
 }
 
 void cancelarPedido(vector<Pedido> &listaPe){
-
+    int id;
+    cout<<"Que pedido desea cancelar?"<<endl;
+    cin>>id;
+    for (int i=0;i<listaPe.size();i++){
+        if(listaPe[i].numero==id){
+            listaPe.erase(listaPe.begin() +i);
+        }
+    }
 }
 
 void mostrarPedido(vector<Pedido> listaPe){
     for(int i=0;i<listaPe.size();i++){
         cout<<listaPe[i].numero<<" "<<listaPe[i].nombre<<endl;
         for(int ii=0;ii<listaPe[i].plato.size();ii++){
-            cout<<listaPe[i].plato[ii].id<<" "<<listaPe[i].plato[ii].nombre<<" "<<listaPe[i].plato[ii].cantidad<<" "<<listaPe[i].plato[ii].precio<<"$"<<endl;
+            cout<<listaPe[i].plato[ii].nombre<<" "<<listaPe[i].plato[ii].cantidad<<" "<<listaPe[i].plato[ii].precio<<"$"<<endl;
         }
     }
 }
 
 void ingresoTotal(vector<Pedido> listaPe){
-
+    float total=0;
+    for (int i=0;i<listaPe.size();i++){
+        for (int ii=0;ii<listaPe[i].plato.size();ii++){
+            total+= listaPe[i].plato[ii].precio;
+        }
+    }
+    cout<<"Total:"<<total<<"$"<<endl;
 }
 
 int menu(){
