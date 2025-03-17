@@ -27,10 +27,47 @@ struct Partido{
     string estadio;
 };
 
-vector<Partido> partido_jugado(vector<Partido> &partidos){
-    cout<<"ingresar nombre de los equipos"<<endl;
-    cout<<"equipo visitante"<<endl;
-    cin>>partidos.
+vector<Partido> partido_jugado(vector<Equipo> &equipos){
+    vector<Partido> partidos;
+    Partido partido;
+    char loop='y';
+    while(loop=='y'){
+        cout<<"ingresar nombre de los equipos"<<endl;
+        cout<<"equipo visitante"<<endl;
+        //se fija que los nombres puestos sean iguales a los de los equipos.
+        bool a=true;
+        string name1;
+        while(a==true){
+            cin>>name1;
+            for(int i=0;i<equipos.size();i++){
+                if(name1==equipos[i].nombre){
+                    name1=partido.equipo_vis;
+                    a=false;
+                }
+            }
+        }
+        cout<<"equipo local"<<endl;
+        cin>>partido.equipo_loc;
+        cout<<"goles visitantes"<<endl;
+        cin>>partido.goles_vis;
+        cout<<"goles locales"<<endl;
+        cin>>partido.goles_loc;
+        cout<<"fecha del partido"<<endl;
+        cout<<"dia"<<endl;
+        cin>>partido.fecha.dia;
+        cout<<"mes"<<endl;
+        cin>>partido.fecha.mes;
+        cout<<"año"<<endl;
+        cin>>partido.fecha.año;
+        cout<<"estadio"<<endl;
+        cin>>partido.estadio;
+        partidos.push_back(partido);
+        if(partido.goles_loc>partido.goles_vis){
+
+        }
+        cout<<"añadir otro partido? y/n"<<endl;
+        cin>>loop;
+    }
 }
 
 int main(){
