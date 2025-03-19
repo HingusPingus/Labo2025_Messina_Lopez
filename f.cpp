@@ -16,7 +16,7 @@ struct Equipo{
     vector<Jugador> jugadores;
     int g_contra;
     int g_fav;
-    char hist;
+    vector<char> hist;
 };
 struct Partido{
     string equipo_vis;
@@ -26,7 +26,44 @@ struct Partido{
     Fecha fecha;
     string estadio;
 };
-
+void mostrar_partido(vector<Partido> partidos, vector<Equipo> equipos){
+    string equipo_vis;
+    string equipo_loc;
+    bool a=true;
+    string name1;
+    while(a==true){
+        cout<<"ingrese nombre de equipo visitante valido"<<endl;
+        cin>>name1;
+        for(int i=0;i<equipos.size();i++){
+            if(name1==equipos[i].nombre){
+                name1=equipo_vis;
+                a=false;
+            }
+        }
+    }
+    bool b=true;
+    string name2;
+    while(b==true){
+        cout<<"ingrese nombre de equipo local valido"<<endl;
+        cin>>name2;
+        for(int j=0;j<equipos.size();j++){
+            if(name2==equipos[j].nombre){
+                name2=equipo_loc;
+                b=false;
+            }
+        }
+    }
+    for(int q=0;q<partidos.size();q++){
+        if(equipo_loc==partidos[q].equipo_loc and equipo_vis==partidos[q].equipo_vis){
+            cout<<"informacion del partido:"<<endl;
+            cout<<"equipo visitante: "<<partidos[q].equipo_vis<<"."<<endl;
+            cout<<"goles visitantes: "<<partidos[q].goles_vis<<"."<<endl;
+            cout<<"goles locales: "<<partidos[q].goles_loc<<"."<<endl;
+            cout<<"fecha: "<<partidos[q].fecha.dia<<"/"<<partidos[q].fecha.mes<<"/"<<partidos[q].fecha.año<<endl;
+            cout<<"estadio: "<<partidos[q].estadio<<"."<<endl;
+        }
+    }
+}
 vector<Partido> partido_jugado(vector<Equipo> &equipos){
     vector<Partido> partidos;
     Partido partido;
@@ -46,8 +83,17 @@ vector<Partido> partido_jugado(vector<Equipo> &equipos){
                 }
             }
         }
-        cout<<"equipo local"<<endl;
-        cin>>partido.equipo_loc;
+        bool b=true;
+        string name2;
+        while(b==true){
+            cin>>name2;
+            for(int j=0;j<equipos.size();j++){
+                if(name2==equipos[j].nombre){
+                    name2=partido.equipo_loc;
+                    b=false;
+                }
+            }
+        }
         cout<<"goles visitantes"<<endl;
         cin>>partido.goles_vis;
         cout<<"goles locales"<<endl;
@@ -63,11 +109,39 @@ vector<Partido> partido_jugado(vector<Equipo> &equipos){
         cin>>partido.estadio;
         partidos.push_back(partido);
         if(partido.goles_loc>partido.goles_vis){
-
+            for(int ii=0;ii<equipos.size();ii++){
+                if(partido.equipo_loc==equipos[ii].nombre){
+                    equipos[ii].hist.push_back('V');
+                }
+                if(partido.equipo_vis==equipos[ii].nombre){
+                    equipos[ii].hist.push_back('L');
+                }
+            }
+        }
+        else if(partido.goles_vis>partido.goles_loc){
+            for(int jj=0;jj<equipos.size();jj++){
+                if(partido.equipo_vis==equipos[jj].nombre){
+                    equipos[jj].hist.push_back('V');
+                }
+                if(partido.equipo_loc==equipos[jj].nombre){
+                    equipos[jj].hist.push_back('L');
+                }
+            }
+        }
+        else if(partido.goles_vis==partido.goles_loc){
+            for(int q=0;q<equipos.size();q++){
+                if(partido.equipo_vis==equipos[q].nombre or partido.equipo_loc==equipos[q].nombre){
+                    equipos[q].hist.push_back('D');
+                }
+            }
         }
         cout<<"añadir otro partido? y/n"<<endl;
         cin>>loop;
     }
+    return partidos;
+}
+void tabla (vector<Equipo> equipos){
+    
 }
 
 int main(){
