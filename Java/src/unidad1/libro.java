@@ -1,4 +1,4 @@
-package clases_obj;
+package unidad1;
 
 public class libro{
     private String titulo;
@@ -24,8 +24,6 @@ public class libro{
         this.editorial="Editorial sumamente real";
         this.fechaPublicacion= new fecha(28,7,1986);
     }
-
-
     public libro(String titulo, persona autor, int paginas, int ISBN, String editorial, fecha fechaPublicacion) {
         this.titulo = titulo;
         this.autor = autor;

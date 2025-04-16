@@ -1,4 +1,4 @@
-package clases_obj;
+package unidad1;
 
 public class persona {
     private String nombre;
