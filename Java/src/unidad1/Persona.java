@@ -1,20 +1,29 @@
 package unidad1;
 
-public class persona {
+public class Persona {
     private String nombre;
+    private String apellido;
     private int edad;
     private String direccion;
 
-    public persona(){
+    public Persona(){
         this.nombre="carlos";
         this.edad=38;
         this.direccion="Bulgaria 4385";
     }
 
-    public persona(String nombre, int edad, String direccion){
+    public Persona(String nombre, int edad, String direccion){
         this.nombre=nombre;
         this.edad=edad;
         this.direccion=direccion;
+        this.apellido="Perez";
+    }
+
+    public Persona(String nombre,String apellido, int edad, String direccion){
+        this.nombre=nombre;
+        this.edad=edad;
+        this.direccion=direccion;
+        this.apellido=apellido;
     }
 
     public int getEdad() {
@@ -42,11 +51,11 @@ public class persona {
     }
 
     public void mostrarTodo(){
-        System.out.println(this.nombre +" "+ this.edad +" "+ this.direccion);
+        System.out.println(this.nombre +" "+ this.edad +" "+ this.direccion +" "+ this.apellido);
     }
 
     public static void main(String[] args) {
-        persona p1=new persona();
+        Persona p1=new Persona();
         p1.mostrarTodo();
     }
 }

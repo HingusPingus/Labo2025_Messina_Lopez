@@ -2,14 +2,14 @@ package unidad1;
 
 public class Cancion {
     private String titulo;
-    private persona autor;
+    private Persona autor;
 
     public Cancion(){
-        this.autor=new persona();
+        this.autor=new Persona();
         this.titulo="Puente";
     }
 
-    public Cancion(persona autor, String titulo) {
+    public Cancion(Persona autor, String titulo) {
         this.autor = autor;
         this.titulo = titulo;
     }
@@ -22,11 +22,11 @@ public class Cancion {
         this.titulo = titulo;
     }
 
-    public persona getAutor() {
+    public Persona getAutor() {
         return autor;
     }
 
-    public void setAutor(persona autor) {
+    public void setAutor(Persona autor) {
         this.autor = autor;
     }
 }

@@ -2,29 +2,29 @@ package unidad1;
 
 public class libro{
     private String titulo;
-    private persona autor;
+    private Persona autor;
     private int ISBN;
     private int paginas;
     private String editorial;
-    private fecha fechaPublicacion;
+    private Fecha fechaPublicacion;
 
     public libro(){
         this.titulo="Carlitos y el Sanguche de Milanesa Místico";
-        this.autor=new persona();
+        this.autor=new Persona();
         this.ISBN=6991218;
         this.paginas=69;
         this.editorial="Editorial sumamente real";
-        this.fechaPublicacion= new fecha(28,7,1986);
+        this.fechaPublicacion= new Fecha(28,7,1986);
     }
     public libro(String titulo){
         this.titulo=titulo;
-        this.autor=new persona();
+        this.autor=new Persona();
         this.ISBN=6991218;
         this.paginas=69;
         this.editorial="Editorial sumamente real";
-        this.fechaPublicacion= new fecha(28,7,1986);
+        this.fechaPublicacion= new Fecha(28,7,1986);
     }
-    public libro(String titulo, persona autor, int paginas, int ISBN, String editorial, fecha fechaPublicacion) {
+    public libro(String titulo, Persona autor, int paginas, int ISBN, String editorial, Fecha fechaPublicacion) {
         this.titulo = titulo;
         this.autor = autor;
         this.paginas = paginas;
@@ -41,11 +41,11 @@ public class libro{
         this.titulo = titulo;
     }
 
-    public persona getAutor() {
+    public Persona getAutor() {
         return autor;
     }
 
-    public void setAutor(persona autor) {
+    public void setAutor(Persona autor) {
         this.autor = autor;
     }
 
@@ -73,11 +73,11 @@ public class libro{
         this.editorial = editorial;
     }
 
-    public fecha getFechaPublicacion() {
+    public Fecha getFechaPublicacion() {
         return fechaPublicacion;
     }
 
-    public void setFechaPublicacion(fecha fechaPublicacion) {
+    public void setFechaPublicacion(Fecha fechaPublicacion) {
         this.fechaPublicacion = fechaPublicacion;
     }
 
@@ -88,7 +88,7 @@ public class libro{
     }
 
     public void anteriorQue(libro l1){
-        fecha f1=l1.getFechaPublicacion();
+        Fecha f1=l1.getFechaPublicacion();
         this.fechaPublicacion.mayorQue(f1.getDia(),f1.getMes(),f1.getAnio());
     }
 }

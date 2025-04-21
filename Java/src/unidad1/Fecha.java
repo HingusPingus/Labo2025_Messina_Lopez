@@ -1,16 +1,16 @@
 package unidad1;
 
-public class fecha {
+public class Fecha {
     private int dia;
     private int mes;
     private int anio;
 
-    public fecha(){
+    public Fecha(){
         this.dia=26;
         this.mes=6;
         this.anio=2011;
     }
-    public fecha(int dia, int mes, int anio){
+    public Fecha(int dia, int mes, int anio){
         this.dia=dia;
         this.anio=anio;
         this.mes=mes;
@@ -124,8 +124,8 @@ public class fecha {
     }
 
     public static void main(String[] args) {
-        fecha f1=new fecha();
-        fecha f2=new fecha(05, 01, 2008);
+        Fecha f1=new Fecha();
+        Fecha f2=new Fecha(05, 01, 2008);
     }
 }
 
