@@ -1,4 +1,4 @@
-package ejercicios0;
+package ejercicios;
 
 public class Vocales {
     public static void main(String[] args) {

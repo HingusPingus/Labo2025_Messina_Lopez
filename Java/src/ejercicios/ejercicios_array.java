@@ -1,4 +1,6 @@
-package unidad1;
+package ejercicios;
+
+import personas.Persona;
 
 import java.util.ArrayList;
 

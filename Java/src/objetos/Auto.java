@@ -1,18 +1,18 @@
-package unidad1;
+package objetos;
 
-public class auto {
+public class Auto {
     private String marca;
     private String modelo;
     private String color;
     private int v;
 
-    public auto(){
+    public Auto(){
         this.marca="BMW";
         this.color="negro";
         this.modelo="a";
         this.v=10;
     }
-    public auto(String marca, String modelo, String color, int v){
+    public Auto(String marca, String modelo, String color, int v){
         this.marca=marca;
         this.color=color;
         this.modelo=modelo;

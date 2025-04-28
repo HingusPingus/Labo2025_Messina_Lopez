@@ -1,6 +1,9 @@
-package unidad1;
+package objetos;
 
-public class libro{
+import personas.Persona;
+import conceptos.Fecha;
+
+public class Libro{
     private String titulo;
     private Persona autor;
     private int ISBN;
@@ -8,7 +11,7 @@ public class libro{
     private String editorial;
     private Fecha fechaPublicacion;
 
-    public libro(){
+    public Libro(){
         this.titulo="Carlitos y el Sanguche de Milanesa Místico";
         this.autor=new Persona();
         this.ISBN=6991218;
@@ -16,7 +19,7 @@ public class libro{
         this.editorial="Editorial sumamente real";
         this.fechaPublicacion= new Fecha(28,7,1986);
     }
-    public libro(String titulo){
+    public Libro(String titulo){
         this.titulo=titulo;
         this.autor=new Persona();
         this.ISBN=6991218;
@@ -24,7 +27,7 @@ public class libro{
         this.editorial="Editorial sumamente real";
         this.fechaPublicacion= new Fecha(28,7,1986);
     }
-    public libro(String titulo, Persona autor, int paginas, int ISBN, String editorial, Fecha fechaPublicacion) {
+    public Libro(String titulo, Persona autor, int paginas, int ISBN, String editorial, Fecha fechaPublicacion) {
         this.titulo = titulo;
         this.autor = autor;
         this.paginas = paginas;
@@ -87,7 +90,7 @@ public class libro{
         this.fechaPublicacion.corta();
     }
 
-    public void anteriorQue(libro l1){
+    public void anteriorQue(Libro l1){
         Fecha f1=l1.getFechaPublicacion();
         this.fechaPublicacion.mayorQue(f1.getDia(),f1.getMes(),f1.getAnio());
     }

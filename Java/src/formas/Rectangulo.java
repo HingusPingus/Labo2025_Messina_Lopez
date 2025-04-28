@@ -1,15 +1,15 @@
-package unidad1;
+package formas;
 
-public class rectangulo {
+public class Rectangulo {
     private float base;
     private float altura;
 
-    public rectangulo(){
+    public Rectangulo(){
         this.base=2;
         this.altura=2;
     }
 
-    public rectangulo(float base, float altura){
+    public Rectangulo(float base, float altura){
         this.base=base;
         this.altura=altura;
     }
@@ -41,7 +41,7 @@ public class rectangulo {
     }
 
     public static void main(String[] args) {
-        rectangulo c1=new rectangulo();
+        Rectangulo c1=new Rectangulo();
         System.out.println(c1.getBase()+c1.getAltura());
         System.out.println(c1.area(c1.getBase(),c1.getAltura()));
         System.out.println(c1.perimeter(c1.getBase(),c1.getAltura()));

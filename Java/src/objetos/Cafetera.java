@@ -1,4 +1,4 @@
-package unidad1;
+package objetos;
 
 public class Cafetera {
     private int cantMax;

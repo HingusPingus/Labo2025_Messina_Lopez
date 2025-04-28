@@ -1,4 +1,4 @@
-package ejercicios0;
+package ejercicios;
 import java.util.Scanner;
 
 public class Num_mayor {

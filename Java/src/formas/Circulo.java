@@ -1,15 +1,15 @@
-package unidad1;
+package formas;
 
 
-public class circulo {
+public class Circulo {
     private float radio;
 
 
-    public circulo(){
+    public Circulo(){
         this.radio= 2.0F;
     }
 
-    public circulo(float radio){
+    public Circulo(float radio){
         this.radio=radio;
     }
 
@@ -33,7 +33,7 @@ public class circulo {
     }
 
     public static void main(String[] args) {
-        circulo c1=new circulo();
+        Circulo c1=new Circulo();
         System.out.println(c1.getRadio());
         System.out.println(c1.area(c1.getRadio()));
         System.out.println(c1.perimeter(c1.getRadio()));

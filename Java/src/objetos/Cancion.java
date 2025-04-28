@@ -1,4 +1,6 @@
-package unidad1;
+package objetos;
+
+import personas.Persona;
 
 public class Cancion {
     private String titulo;

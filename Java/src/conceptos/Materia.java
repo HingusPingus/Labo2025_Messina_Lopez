@@ -1,4 +1,6 @@
-package unidad1;
+package conceptos;
+
+import personas.Alumno;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,7 @@
-package unidad1;
+package personas;
+
+import conceptos.Fecha;
+import conceptos.Materia;
 
 import java.util.ArrayList;
 
