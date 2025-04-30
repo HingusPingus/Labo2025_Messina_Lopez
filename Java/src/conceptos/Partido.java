@@ -1,5 +1,7 @@
 package conceptos;
 
+import organizaciones.Equipo;
+
 public class Partido {
     private Fecha diaPartido;
     private String turno;

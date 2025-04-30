@@ -1,5 +1,7 @@
 package conceptos;
 
+import organizaciones.Equipo;
+
 import java.util.ArrayList;
 import java.util.Random;
 public class Torneo {

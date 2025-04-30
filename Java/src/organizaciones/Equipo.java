@@ -1,4 +1,4 @@
-package conceptos;
+package organizaciones;
 
 import personas.Jugador;
 
