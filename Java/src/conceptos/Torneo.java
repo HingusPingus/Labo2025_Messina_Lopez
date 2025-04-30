@@ -31,7 +31,7 @@ public class Torneo {
     private boolean comprobacion(Equipo equipoAComprobar){
         boolean existe=false;
         for(Equipo equipo:this.equipos){
-            if (equipo.getNombre()==equipoAComprobar.getNombre()){
+            if (equipo.getNombre().equals(equipoAComprobar.getNombre())){
                 existe=true;
             }
         }
@@ -51,38 +51,35 @@ public class Torneo {
         ArrayList<Fecha> fechas=new ArrayList<Fecha>();
         fixture=new ArrayList<Partido>();
         Random random=new Random();
-        boolean nojugaron=true;
+        boolean nojugaron;
         for (int i = 0; i < this.equipos.size()-1; i++) {
             fechas.add(new Fecha(random.nextInt(29)+1, random.nextInt(11)+1, 2025));
         }
 
 
         for (int i = 0; i < this.equipos.size()-1; i++) {
-            for (int j = 0; j < this.equipos.size()-1; j++) {
-                for(Equipo equipo: this.equipos){
-                    if(equipo.getPartidosJugados()<i){
-
-                        equipo.setPartidosJugados(equipo.getPartidosJugados()+1);
-                        for(Equipo equipoContra: this.equipos) {
-                            nojugaron=true;
-                            if(equipoContra.getPartidosJugados()<i){
-                                for (Partido partido: fixture) {
-                                    if(equipo.getNombre().equals(partido.getEquipo1().getNombre())&&equipoContra.getNombre().equals(partido.getEquipo2().getNombre())){
-                                        nojugaron=false;
-                                    }
-                                    else if(equipo.getNombre().equals(partido.getEquipo2().getNombre())&&equipoContra.getNombre().equals(partido.getEquipo1().getNombre())){
-                                        nojugaron=false;
-                                    }
+            for(Equipo equipo: this.equipos){
+                if(equipo.getPartidosJugados()<i){
+                    equipo.setPartidosJugados(equipo.getPartidosJugados()+1);
+                    for(Equipo equipoContra: this.equipos) {
+                        nojugaron=true;
+                        if(equipoContra.getPartidosJugados()<i){
+                            for (Partido partido: fixture) {
+                                if(equipo.getNombre().equals(partido.getEquipo1().getNombre())&&equipoContra.getNombre().equals(partido.getEquipo2().getNombre())){
+                                    nojugaron=false;
                                 }
-                                if(nojugaron) {
-                                    equipoContra.setPartidosJugados(equipoContra.getPartidosJugados() + 1);
-                                    if (random.nextBoolean()) {
-                                        this.fixture.add(new Partido(fechas.get(i), equipo.getDisponible(), equipo, equipoContra));
-                                        break;
-                                    } else {
-                                        this.fixture.add(new Partido(fechas.get(i), equipoContra.getDisponible(), equipo, equipoContra));
-                                        break;
-                                    }
+                                else if(equipo.getNombre().equals(partido.getEquipo2().getNombre())&&equipoContra.getNombre().equals(partido.getEquipo1().getNombre())) {
+                                    nojugaron = false;
+                                }
+                            }
+                            if(nojugaron) {
+                                equipoContra.setPartidosJugados(equipoContra.getPartidosJugados() + 1);
+                                if (random.nextBoolean()) {
+                                    this.fixture.add(new Partido(fechas.get(i), equipo.getDisponible(), equipo, equipoContra));
+                                    break;
+                                } else {
+                                    this.fixture.add(new Partido(fechas.get(i), equipoContra.getDisponible(), equipo, equipoContra));
+                                    break;
                                 }
                             }
                         }
