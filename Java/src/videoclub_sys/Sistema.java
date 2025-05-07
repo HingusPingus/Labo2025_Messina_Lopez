@@ -23,6 +23,18 @@ public class Sistema {
     public void addVideoclub(Videoclub videoclub){
         this.videoclubes.add(videoclub);
     }
+    public Videoclub masPeliculas(){
+        int aux=0;
+        Videoclub VCaux= new Videoclub();
+        for(Videoclub VC : videoclubes){
+            for(Estanteria E : VC.getEstanterias()){
+                if(aux<VC.getEstanterias().size()){
+                    VCaux=VC;
+                }
+            }
+        }
+        return VCaux;
+    }
     public void deleteVideoclub(int posicion) {
         this.videoclubes.remove(posicion);
     }
@@ -31,6 +43,28 @@ public class Sistema {
         for (Videoclub vc : this.videoclubes){
             if(vc.getCodigoPostal()==codigos[comuna+1]){
                 System.out.println(vc.getDireccion());
+            }
+        }
+    }
+    public void pelisGenero(String genero){
+
+        for(Videoclub v: this.videoclubes){
+            ArrayList<Pelicula> pelisDelGenero = new ArrayList<>();
+            for (Estanteria e: v.getEstanterias()) {
+                for(Pelicula p:e.getEstanteria()){
+                    if(p.getGenero().equalsIgnoreCase(genero)){
+                        pelisDelGenero.add(p);
+                    }
+                }
+            }
+            System.out.println(v.getDireccion()+":");
+            if(pelisDelGenero.isEmpty()){
+                System.out.println("Este videclub no tiene pelis de ese género");
+            }
+            else {
+                for (Pelicula p : pelisDelGenero) {
+                    System.out.println(p.getNombre());
+                }
             }
         }
     }

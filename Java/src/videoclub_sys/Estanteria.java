@@ -59,4 +59,7 @@ public class Estanteria {
         }
         return peliscortas;
     }
+    public int cantidadPelis(){
+        return this.estanteria.size();
+    }
 }

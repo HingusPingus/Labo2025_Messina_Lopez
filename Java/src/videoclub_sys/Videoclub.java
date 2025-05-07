@@ -49,5 +49,12 @@ public class Videoclub {
         System.out.println("Nombre: "+estanterias.get(aux1).getEstanteria().get(aux2).getNombre()+" Estanteria: "+aux1);
     }
 
+    public int cantidadPelis(){
+        int aux=0;
+        for (Estanteria e: this.estanterias){
+            aux+=e.cantidadPelis();
+        }
+        return aux;
+    }
 
 }

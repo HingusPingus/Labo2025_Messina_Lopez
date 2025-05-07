@@ -5,14 +5,14 @@ import java.util.ArrayList;
 
 public class BancoNacion {
     private String direccion;
-    private boolean bolas1;
-    private boolean bolas2;
+    private boolean bool1;
+    private boolean bool2;
     private ArrayList<Persona> trabajadores;
 
-    public BancoNacion(String direccion, boolean bolas1, boolean bolas2) {
+    public BancoNacion(String direccion, boolean bool1, boolean bool2) {
         this.direccion = direccion;
-        this.bolas1 = bolas1;
-        this.bolas2 = bolas2;
+        this.bool1 = bool1;
+        this.bool2 = bool2;
         this.trabajadores = new ArrayList<>();
     }
 
@@ -32,20 +32,20 @@ public class BancoNacion {
         this.trabajadores = trabajadores;
     }
 
-    public boolean isBolas2() {
-        return bolas2;
+    public boolean isbool2() {
+        return bool2;
     }
 
-    public void setBolas2(boolean bolas2) {
-        this.bolas2 = bolas2;
+    public void setbool2(boolean bool2) {
+        this.bool2 = bool2;
     }
 
-    public boolean isBolas1() {
-        return bolas1;
+    public boolean isbool1() {
+        return bool1;
     }
 
-    public void setBolas1(boolean bolas1) {
-        this.bolas1 = bolas1;
+    public void setbool1(boolean bool1) {
+        this.bool1 = bool1;
     }
 
     public void agregarTrabajador(Persona trabajador){
