@@ -10,7 +10,7 @@ public class Persona {
     private LocalDate fechaNacimiento;
     private LocalDate fechaContrato;
 
-    public Persona(String nombre, LocalDate fechaNacimiento, String apellido, int dni) {
+    public Persona(String nombre, String apellido, int dni, LocalDate fechaNacimiento) {
         this.nombre = nombre;
         this.fechaNacimiento = fechaNacimiento;
         this.apellido = apellido;
