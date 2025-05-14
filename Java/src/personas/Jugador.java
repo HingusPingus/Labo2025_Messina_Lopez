@@ -2,53 +2,46 @@ package personas;
 
 import conceptos.Fecha;
 
-public class Jugador {
-    private Persona datos;
+public class Jugador extends Persona {
     private Fecha fechaNacimiento;
     private int numeroCamiseta;
     private boolean capitan;
 
     public Jugador() {
-        this.datos = new Persona();
+        super();
         this.capitan = false;
         this.numeroCamiseta = 23;
         this.fechaNacimiento = new Fecha(9,12,2018);
     }
 
-    public Jugador(Persona datos, boolean capitan, int numeroCamiseta, Fecha fechaNacimiento) {
-        this.datos = datos;
+    public Jugador(String nombre, String apellido, int edad, String direccion, boolean capitan, int numeroCamiseta, Fecha fechaNacimiento) {
+        super(nombre, apellido, edad, direccion);
         this.capitan = capitan;
         this.numeroCamiseta = numeroCamiseta;
         this.fechaNacimiento = fechaNacimiento;
     }
 
     public Jugador(boolean capitan) {
-        this.datos = new Persona();
+        super();
         this.capitan = capitan;
         this.numeroCamiseta = 23;
         this.fechaNacimiento = new Fecha(9,12,2018);
     }
     public Jugador(int numeroCamiseta) {
-        this.datos = new Persona();
+        super();
         this.capitan = false;
         this.numeroCamiseta = numeroCamiseta;
         this.fechaNacimiento = new Fecha(9,12,2018);
     }
 
     public Jugador(boolean capitan,int numeroCamiseta) {
-        this.datos = new Persona();
+        super();
         this.capitan = capitan;
         this.numeroCamiseta = numeroCamiseta;
         this.fechaNacimiento = new Fecha(9,12,2018);
     }
 
-    public Persona getDatos() {
-        return datos;
-    }
 
-    public void setDatos(Persona datos) {
-        this.datos = datos;
-    }
 
     public boolean isCapitan() {
         return capitan;

@@ -1,6 +1,6 @@
 package formas;
 
-public class Rectangulo {
+public class Rectangulo extends Forma {
     private float base;
     private float altura;
 
@@ -29,12 +29,12 @@ public class Rectangulo {
     public void setBase(float base) {
         this.base = base;
     }
-    public float area(float base,float altura){
+    public double area(){
         float ara;
         ara=base*altura;
         return ara;
     }
-    public float perimeter(float base, float altura){
+    public double perimeter(){
         float perimetro;
         perimetro=2*(base+altura);
         return perimetro;
@@ -43,7 +43,7 @@ public class Rectangulo {
     public static void main(String[] args) {
         Rectangulo c1=new Rectangulo();
         System.out.println(c1.getBase()+c1.getAltura());
-        System.out.println(c1.area(c1.getBase(),c1.getAltura()));
-        System.out.println(c1.perimeter(c1.getBase(),c1.getAltura()));
+        System.out.println(c1.area());
+        System.out.println(c1.perimeter());
     }
 }

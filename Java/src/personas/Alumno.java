@@ -5,21 +5,20 @@ import conceptos.Materia;
 
 import java.util.ArrayList;
 
-public class Alumno {
-    private Persona estudiante;
+public class Alumno extends Persona {
     private Fecha fechaNacimiento;
     private ArrayList<Double> notas;
     private ArrayList<Materia> listaMaterias;
 
-    public Alumno(Persona estudiante, Fecha fechaNacimiento, ArrayList<Double> notas, ArrayList<Materia> listaMaterias) {
-        this.estudiante = estudiante;
+    public Alumno(String nombre, String apellido, int edad, String direccion, Fecha fechaNacimiento, ArrayList<Double> notas, ArrayList<Materia> listaMaterias) {
+        super(nombre, apellido, edad, direccion);
         this.fechaNacimiento = fechaNacimiento;
         this.notas = notas;
         this.listaMaterias=listaMaterias;
     }
 
     public Alumno() {
-        this.estudiante = new Persona("Carlos","Gómez", 21,"Habana 4825");
+        super();
         this.fechaNacimiento = new Fecha(9,12,2003);
         this.notas = new ArrayList<Double>();
         this.listaMaterias=new ArrayList<Materia>();
@@ -38,13 +37,6 @@ public class Alumno {
         return listaMaterias;
     }
 
-    public Persona getEstudiante() {
-        return estudiante;
-    }
-
-    public void setEstudiante(Persona estudiante) {
-        this.estudiante = estudiante;
-    }
 
     public ArrayList<Double> getNotas() {
         return notas;
