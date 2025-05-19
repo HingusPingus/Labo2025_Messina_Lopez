@@ -7,4 +7,7 @@ public class Bicicleta extends Vehiculo{
     public Bicicleta(){
         super("pepe","mujica","blanco",2,2015);
     }
+    public String claseVehiculo(){
+        return"Bicicleta";
+    }
 }

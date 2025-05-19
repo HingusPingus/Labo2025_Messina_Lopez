@@ -2,7 +2,7 @@ package vehiculos;
 
 public class Camioneta extends Automovil {
     private double capacidad;
-    private double capacidad_actual;
+    private double carga_actual;
 
     public Camioneta(){
         super();
@@ -22,7 +22,21 @@ public class Camioneta extends Automovil {
         this.capacidad = capacidad;
     }
 
-    public double getCapacidad_actual() {
-        return capacidad_actual;
+    public double getCarga_actual() {
+        return carga_actual;
     }
+    public String claseVehiculo(){
+        return"Camioneta";
+    }
+
+    public void aumentarCarga(double carga){
+        if(carga_actual+carga>capacidad){
+            System.out.println("La carga actual sobrepasa la capacidad");
+        }
+        else{
+            this.carga_actual+=carga;
+        }
+    }
+
+
 }

@@ -20,4 +20,7 @@ public class Auto extends Automovil {
     public void setDescapotable(boolean descapotable) {
         this.descapotable = descapotable;
     }
+    public String claseVehiculo(){
+        return"Auto";
+    }
 }

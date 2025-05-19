@@ -63,4 +63,8 @@ public class Vehiculo {
     public void setFechaFabricacion(int fechaFabricacion) {
         this.fechaFabricacion = fechaFabricacion;
     }
+
+    public String claseVehiculo(){
+        return "";
+    }
 }
