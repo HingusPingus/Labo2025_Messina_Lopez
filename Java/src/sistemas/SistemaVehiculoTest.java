@@ -18,7 +18,7 @@ public class SistemaVehiculoTest {
     Auto a1, a2;
     Camioneta c1;
     Bicicleta b1;
-    ArrayList<Vehiculo> vehiculos
+    ArrayList<Vehiculo> vehiculos;
     SistemaVehiculo sys;
 
     @BeforeEach
@@ -36,13 +36,13 @@ public class SistemaVehiculoTest {
     }
 
     @Test
-    public void testMasCantVehiculo{
+    public void testMasCantVehiculo(){
         assertEquals("Auto",sys.masCantVehiculo());
 
     }
 
     @Test
-    public void testPorcentajeDescapotables{
+    public void testPorcentajeDescapotables(){
         assertEquals(50,sys.porcentajeDescapotables());
     }
 }

@@ -57,7 +57,7 @@ public class Materia {
         ArrayList<Double> promedio=new ArrayList<Double>();
         for(Materia materia : materias){
             for(Alumno alumno:alumnosInscriptos){
-                total+=alumno.getEstudiante().getEdad();
+                total+=alumno.getEdad();
             }
             avg=total/alumnosInscriptos.size();
             promedio.add(avg);
