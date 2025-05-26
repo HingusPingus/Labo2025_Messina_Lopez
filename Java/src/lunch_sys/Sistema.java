@@ -28,6 +28,14 @@ public class Sistema {
         return pedidos;
     }
 
+    public ArrayList<Plato> getPlatos() {
+        return platos;
+    }
+
+    public void setPlatos(ArrayList<Plato> platos) {
+        this.platos = platos;
+    }
+
     public void setPedidos(ArrayList<Pedido> pedidos) {
         this.pedidos = pedidos;
     }
@@ -42,6 +50,15 @@ public class Sistema {
         if(index<platos.size() && index>=0){
             platos.set(index, plato);
         }
+    }
+    public void modifyPedido(Pedido pedido, int index){
+        pedidos.set(index, pedido);
+    }
+    public void checkPrecio(Pedido pedido, int numPedido){
+        if(pedido.getSolicitante().getClass().getCanonicalName().equals("Profesor")){
+            pedido.getPlato().setPrecio(pedido.getPlato().getPrecio()+(pedido.getPlato().getPrecio()*0.10));
+        }
+        modifyPedido(pedido, numPedido);
     }
 
     public ArrayList<Plato> cuantosPlatosPorDia(LocalDate dia){
@@ -66,6 +83,7 @@ public class Sistema {
         int n = counter.size();
 
         ArrayList<Map.Entry<Plato, Integer>> entryList=new ArrayList<>();
+        entryList.addAll(counter.entrySet());
         entryList.sort((entry1, entry2) -> entry2.getValue().compareTo(entry1.getValue()));
         ArrayList<Plato>topPlatos=new ArrayList<>();
         for (int i = 0; i < Math.min(3, entryList.size()); i++) {
