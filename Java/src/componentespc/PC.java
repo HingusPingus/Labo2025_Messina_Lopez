@@ -57,5 +57,29 @@ public class PC {
         }
 
     }
+    public double calcularPrecio(){
+        double precioTotal=0;
+        for(Periferico p1:this.perifericos){
+            precioTotal+=p1.getPrecio();
+        }
+        precioTotal+= cpu.getPrecio();
+
+        return precioTotal;
+    }
+
+    public void cantidadPerifericos(){
+        int in=0, out=0;
+        for(Periferico p1:this.perifericos){
+            if(p1.quienSoy().equals("Entrada")){
+                in++;
+            }
+            else if (p1.quienSoy().equals("Salida")||p1.quienSoy().equals("Impresora")){
+                out++;
+            }
+        }
+        System.out.println("Cantidad de perifericos de entrada: "+in);
+        System.out.println("Cantidad de perifericos de salida: "+out);
+    }
+
 }
 
