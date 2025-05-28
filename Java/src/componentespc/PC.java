@@ -49,7 +49,7 @@ public class PC {
                 out=true;
             }
         }
-        if(in && out){
+        if(in==true && out==true){
             return true;
         }
         else{
@@ -67,7 +67,7 @@ public class PC {
         return precioTotal;
     }
 
-    public void cantidadPerifericos(){
+    public int cantidadPerifericos(){
         int in=0, out=0;
         for(Periferico p1:this.perifericos){
             if(p1.quienSoy().equals("Entrada")){
@@ -79,6 +79,7 @@ public class PC {
         }
         System.out.println("Cantidad de perifericos de entrada: "+in);
         System.out.println("Cantidad de perifericos de salida: "+out);
+        return in+out;
     }
 
 }

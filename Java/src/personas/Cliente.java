@@ -7,6 +7,12 @@ public class Cliente extends Persona{
     private String metodoPago;
     private Tarjeta tarjeta;
 
+    public Cliente() {
+        super();
+        this.metodoPago = "Efectivo";
+        this.telefono = 324902384;
+    }
+
     public Cliente(String nombre, String apellido, int edad, String direccion, int telefono, String metodoPago) {
         super(nombre, apellido, edad, direccion);
         this.metodoPago = metodoPago;
