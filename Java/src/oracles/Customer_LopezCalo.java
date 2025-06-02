@@ -19,7 +19,7 @@ public class Customer_LopezCalo {
         this.name=size;
     }
     public void addItem(Clothing_LopezCalo item){
-        items[items.length()+1]=item;
+     //   items[itemstrue,.length()+1]=item;
     }
 
     public Clothing_LopezCalo[] getItems() {
@@ -41,24 +41,24 @@ public class Customer_LopezCalo {
             setSize("X");
     }
 }
-    public String getName(){
-        return this.name;
+    //public String getName(){
+    //    return this.name;
     }
-    public void setName(String name){
-        this.name=name;
-    }
+    //public void setName(String name){
+    //    this.name=name;
+   // }
 
-    public double getTotalClothingCost(){
-        double total = 0;
-        for(Clothing_LopezCalo item:list){
-            if(item.getSize.equals(c1.getSize)){
-                total+=item.getPrice();
-                System.out.println(item.getDescription()+", "+item.getPrice()+", "+item.getSize());
-            }
-            if(total>15){
-                break;
-            }
-        }
-    return total;
-}
-}
+   // public double getTotalClothingCost(){
+      //  double total = 0;
+      //  for(Clothing_LopezCalo item:list){
+         //   if(item.getSize.equals(c1.getSize)){
+         //       total+=item.getPrice();
+//System.out.println(item.getDescription()+", "+item.getPrice()+", "+item.getSize());
+        //    }
+        //    if(total>15){
+         //       break;
+         //   }
+     //   }
+    //return total;
+//}
+//}
