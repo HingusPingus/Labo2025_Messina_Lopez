@@ -53,6 +53,11 @@ public class Sensor {
         this.añoAdq = añoAdq;
     }
 
+    public void checkAlarma(){
+        if(estado && medida>=umbral){
+            alarma();
+        }
+    }
     public void alarma(){
 
     }
