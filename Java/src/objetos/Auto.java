@@ -1,18 +1,21 @@
 package objetos;
 
+import enums.Color;
+import enums.Marca;
+
 public class Auto {
-    private String marca;
+    private Marca marca;
     private String modelo;
-    private String color;
+    private Color color;
     private int v;
 
     public Auto(){
-        this.marca="BMW";
-        this.color="negro";
+        this.marca= Marca.BMW;
+        this.color= Color.NEGRO;
         this.modelo="a";
         this.v=10;
     }
-    public Auto(String marca, String modelo, String color, int v){
+    public Auto(Marca marca, String modelo, Color color, int v){
         this.marca=marca;
         this.color=color;
         this.modelo=modelo;
@@ -20,13 +23,13 @@ public class Auto {
     }
 
     public String getMarca() {
-        return marca;
+        return marca.name();
     }
     public String getModelo() {
         return modelo;
     }
     public String getColor() {
-        return color;
+        return color.getNombre();
     }
 
     public int getV() {

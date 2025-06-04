@@ -1,11 +1,14 @@
 package vehiculos;
 
+import enums.Color;
+import enums.Marca;
+
 public class Bicicleta extends Vehiculo{
-    public Bicicleta(String marca, String modelo, String color, int ruedas, int fechaFabricacion) {
+    public Bicicleta(Marca marca, String modelo, Color color, int ruedas, int fechaFabricacion) {
         super(marca, modelo, color, ruedas, fechaFabricacion);
     }
     public Bicicleta(){
-        super("pepe","mujica","blanco",2,2015);
+        super(Marca.BMW,"mujica",Color.BLANCO,2,2015);
     }
     public String claseVehiculo(){
         return"Bicicleta";

@@ -1,6 +1,8 @@
 package sistemas;
 
 
+import enums.Color;
+import enums.Marca;
 import org.junit.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -24,7 +26,7 @@ public class SistemaVehiculoTest {
     @BeforeEach
     public void setUp(){
         a1=new Auto();
-        a2=new Auto("a","b","c",4,2019,"asasf",true);
+        a2=new Auto(Marca.BMW,"b", Color.BLANCO,4,2019,"asasf",true);
         c1=new Camioneta();
         b1=new Bicicleta();
         vehiculos=new ArrayList<>();

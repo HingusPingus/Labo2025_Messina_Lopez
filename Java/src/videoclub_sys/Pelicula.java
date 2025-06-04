@@ -1,5 +1,6 @@
 package videoclub_sys;
 
+import enums.Genero;
 import personas.Persona;
 
 import java.time.Duration;
@@ -9,13 +10,13 @@ import java.util.ArrayList;
 
 public class Pelicula {
     private String nombre;
-    private String genero;
+    private Genero genero;
     private Duration duracion;
     private ArrayList<Persona> directores;
     private ArrayList<Persona> actores;
     private ArrayList<String> idiomas;
 
-    public Pelicula(String nombre, String genero, Duration duracion, ArrayList<Persona> directores, ArrayList<String> idiomas, ArrayList<Persona> actores) {
+    public Pelicula(String nombre, Genero genero, Duration duracion, ArrayList<Persona> directores, ArrayList<String> idiomas, ArrayList<Persona> actores) {
         this.nombre = nombre;
         this.genero = genero;
         this.duracion = duracion;
@@ -25,7 +26,7 @@ public class Pelicula {
     }
     public Pelicula(){
         nombre="la paraste";
-        genero="de pecho colorado";
+        genero= Genero.COMEDIA;
         duracion= Duration.ofHours(2);
         directores= new ArrayList<Persona>();
         directores.add(new Persona());
@@ -37,8 +38,8 @@ public class Pelicula {
 
     public String getNombre() {return nombre;}
     public void setNombre(String nombre) {this.nombre = nombre;}
-    public String getGenero() {return genero;}
-    public void setGenero(String genero) {this.genero = genero;}
+    public String getGenero() {return genero.name();}
+    public void setGenero(Genero genero) {this.genero = genero;}
     public Duration getDuracion() {return duracion;}
     public void setDuracion(Duration duracion) {this.duracion = duracion;}
     public ArrayList<Persona> getDirectores() {return directores;}

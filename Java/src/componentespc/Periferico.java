@@ -1,5 +1,7 @@
 package componentespc;
 
+import enums.Fabricante;
+
 public class Periferico extends Componente{
     private int puertos;
 
@@ -8,7 +10,7 @@ public class Periferico extends Componente{
         this.puertos=1;
     }
 
-    public Periferico(int stock, double precio, String modelo, String fabricante, int puertos) {
+    public Periferico(int stock, double precio, String modelo, Fabricante fabricante, int puertos) {
         super(stock, precio, modelo, fabricante);
         this.puertos = puertos;
     }

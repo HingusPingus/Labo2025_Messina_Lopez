@@ -1,0 +1,5 @@
+package enums;
+
+public enum Marca {
+    BMW,CHEVROLET,MERCEDES,FIAT,FORD,VOLKSWAGEN,TOYOTA,HYUNDAI,HONDA;
+}

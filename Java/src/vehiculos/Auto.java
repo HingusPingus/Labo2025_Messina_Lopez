@@ -1,5 +1,8 @@
 package vehiculos;
 
+import enums.Color;
+import enums.Marca;
+
 public class Auto extends Automovil {
     private boolean descapotable;
 
@@ -8,7 +11,7 @@ public class Auto extends Automovil {
         this.descapotable = false;
     }
 
-    public Auto(String marca, String modelo, String color, int ruedas, int fechaFabricacion, String patente, boolean descapotable) {
+    public Auto(Marca marca, String modelo, Color color, int ruedas, int fechaFabricacion, String patente, boolean descapotable) {
         super(marca, modelo, color, ruedas, fechaFabricacion, patente);
         this.descapotable = descapotable;
     }

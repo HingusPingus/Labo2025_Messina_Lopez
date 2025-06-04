@@ -1,5 +1,8 @@
 package vehiculos;
 
+import enums.Color;
+import enums.Marca;
+
 public class Camioneta extends Automovil {
     private double capacidad;
     private double carga_actual;
@@ -9,7 +12,7 @@ public class Camioneta extends Automovil {
         this.capacidad=690;
     }
 
-    public Camioneta(String marca, String modelo, String color, int ruedas, int fechaFabricacion, String patente, double capacidad) {
+    public Camioneta(Marca marca, String modelo, Color color, int ruedas, int fechaFabricacion, String patente, double capacidad) {
         super(marca, modelo, color, ruedas, fechaFabricacion, patente);
         this.capacidad = capacidad;
     }

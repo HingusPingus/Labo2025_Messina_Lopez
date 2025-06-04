@@ -1,5 +1,8 @@
 package vehiculos;
 
+import enums.Color;
+import enums.Marca;
+
 public class Automovil extends Vehiculo{
     private String patente;
 
@@ -8,7 +11,7 @@ public class Automovil extends Vehiculo{
         this.patente="AB223HA";
     }
 
-    public Automovil(String marca, String modelo, String color, int ruedas, int fechaFabricacion, String patente) {
+    public Automovil(Marca marca, String modelo, Color color, int ruedas, int fechaFabricacion, String patente) {
         super(marca, modelo, color, ruedas, fechaFabricacion);
         this.patente = patente;
     }

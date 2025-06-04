@@ -1,7 +1,9 @@
 package componentespc;
 
+import enums.Fabricante;
+
 public class Componente {
-    private String fabricante;
+    private Fabricante fabricante;
     private String modelo;
     private double precio;
     private int stock;
@@ -10,10 +12,10 @@ public class Componente {
         this.stock = 3;
         this.precio = 2.99;
         this.modelo = "Kumara";
-        this.fabricante = "Redragon";
+        this.fabricante = Fabricante.REDRAGON;
     }
 
-    public Componente(int stock, double precio, String modelo, String fabricante) {
+    public Componente(int stock, double precio, String modelo, Fabricante fabricante) {
         this.stock = stock;
         this.precio = precio;
         this.modelo = modelo;
@@ -21,10 +23,10 @@ public class Componente {
     }
 
     public String getFabricante() {
-        return fabricante;
+        return fabricante.name();
     }
 
-    public void setFabricante(String fabricante) {
+    public void setFabricante(Fabricante fabricante) {
         this.fabricante = fabricante;
     }
 

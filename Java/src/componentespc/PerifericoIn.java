@@ -1,5 +1,7 @@
 package componentespc;
 
+import enums.Fabricante;
+
 public class PerifericoIn extends Periferico {
     private String conector;
 
@@ -8,7 +10,7 @@ public class PerifericoIn extends Periferico {
         this.conector = "USB";
     }
 
-    public PerifericoIn(int stock, double precio, String modelo, String fabricante, int puertos, String conector) {
+    public PerifericoIn(int stock, double precio, String modelo, Fabricante fabricante, int puertos, String conector) {
         super(stock, precio, modelo, fabricante, puertos);
         this.conector = conector;
     }

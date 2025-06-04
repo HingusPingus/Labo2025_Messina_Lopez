@@ -1,5 +1,6 @@
 package objetos;
 
+import enums.LibroEnum;
 import personas.Persona;
 import conceptos.Fecha;
 

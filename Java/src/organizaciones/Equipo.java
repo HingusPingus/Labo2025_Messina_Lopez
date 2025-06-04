@@ -1,5 +1,6 @@
 package organizaciones;
 
+import enums.Turno;
 import personas.Jugador;
 
 import java.util.ArrayList;
@@ -8,12 +9,12 @@ public class Equipo {
     private String nombre;
     private String barrio;
     private ArrayList<Jugador> plantel;
-    private String disponible;
+    private Turno disponible;
     private int partidosJugados;
 
 
     public Equipo() {
-        this.disponible = "Noche";
+        this.disponible = Turno.NOCHE;
         this.plantel = new ArrayList<Jugador>();
         plantel.add(new Jugador(1));
         plantel.add(new Jugador(2));
@@ -33,7 +34,7 @@ public class Equipo {
 
     public Equipo(String nombre) {
         this.nombre = nombre;
-        this.disponible = "Noche";
+        this.disponible = Turno.NOCHE;
         this.plantel = new ArrayList<Jugador>();
         plantel.add(new Jugador(1));
         plantel.add(new Jugador(2));
@@ -50,7 +51,7 @@ public class Equipo {
         this.partidosJugados=0;
     }
 
-    public Equipo(String disponible, ArrayList<Jugador> plantel, String barrio, String nombre) {
+    public Equipo(Turno disponible, ArrayList<Jugador> plantel, String barrio, String nombre) {
         this.disponible = disponible;
         this.plantel = plantel;
         this.barrio = barrio;
@@ -91,10 +92,10 @@ public class Equipo {
     }
 
     public String getDisponible() {
-        return disponible;
+        return disponible.name();
     }
 
-    public void setDisponible(String disponible) {
+    public void setDisponible(Turno disponible) {
         this.disponible = disponible;
     }
     public int getPartidosJugados() {
