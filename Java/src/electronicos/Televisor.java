@@ -4,7 +4,7 @@ public class Televisor extends Multimedia{
     private Tecnologia tecnologia;
 
     public Televisor( ) {
-        this.tecnologia = Tecnologia.cuatroka;
+        this.tecnologia = Tecnologia.CUATROKA;
     }
 
     public Televisor(String nombre, double precio, int stock, Tecnologia tecnologia) {

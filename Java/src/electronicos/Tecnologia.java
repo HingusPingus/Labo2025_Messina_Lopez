@@ -1,11 +1,7 @@
 package electronicos;
 
 public enum Tecnologia {
-    ultraHd("ultraHD"),cuatroka("4k"),fullHd("FullHD");
+    ULTRAHD,CUATROKA,FULLHD;
 
-    private String nombre;
 
-    Tecnologia(String nombre) {
-        this.nombre = nombre;
-    }
 }
