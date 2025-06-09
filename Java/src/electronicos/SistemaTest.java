@@ -14,7 +14,7 @@ public class SistemaTest {
     @BeforeEach
     public void setUp(){
         parlante=new Parlante("JBL",2.75,100,true);
-        tv=new Televisor("Samsung",150.00,15,Tecnologia.cuatroka);
+        tv=new Televisor("Samsung",150.00,15,Tecnologia.CUATROKA);
         cargador=new CargadorPortatil("Apple",190.00,10,200);
         sistema=new Sistema();
     }
