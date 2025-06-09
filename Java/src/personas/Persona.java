@@ -54,8 +54,4 @@ public class Persona {
         System.out.println(this.nombre +" "+ this.edad +" "+ this.direccion +" "+ this.apellido);
     }
 
-    public static void main(String[] args) {
-        Persona p1=new Persona();
-        p1.mostrarTodo();
-    }
 }

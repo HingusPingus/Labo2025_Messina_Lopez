@@ -21,12 +21,14 @@ public class Circulo extends Forma {
         this.radio = radio;
     }
 
+    @Override
     public double area(){
         float ara;
         ara=3.14F*(radio*radio);
         return ara;
     }
-    public double perimeter(){
+    @Override
+    public double perimetro(){
         float perimetro;
         perimetro=2*3.14F*radio;
         return perimetro;
@@ -36,7 +38,7 @@ public class Circulo extends Forma {
         Circulo c1=new Circulo();
         System.out.println(c1.getRadio());
         System.out.println(c1.area());
-        System.out.println(c1.perimeter());
+        System.out.println(c1.perimetro());
     }
 }
 

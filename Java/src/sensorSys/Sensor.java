@@ -2,7 +2,7 @@ package sensorSys;
 
 import java.time.LocalDate;
 
-public class Sensor {
+public abstract class Sensor {
     private boolean estado;
     private int medida;
     private int umbral;

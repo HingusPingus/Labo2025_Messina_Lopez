@@ -3,7 +3,7 @@ package vehiculos;
 import enums.Color;
 import enums.Marca;
 
-public class Vehiculo {
+public abstract class Vehiculo {
     private Marca marca;
     private String modelo;
     private Color color;
@@ -67,7 +67,5 @@ public class Vehiculo {
         this.fechaFabricacion = fechaFabricacion;
     }
 
-    public String claseVehiculo(){
-        return "";
-    }
+    public abstract String claseVehiculo();
 }

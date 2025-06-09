@@ -29,12 +29,14 @@ public class Rectangulo extends Forma {
     public void setBase(float base) {
         this.base = base;
     }
+    @Override
     public double area(){
         float ara;
         ara=base*altura;
         return ara;
     }
-    public double perimeter(){
+    @Override
+    public double perimetro(){
         float perimetro;
         perimetro=2*(base+altura);
         return perimetro;
@@ -44,6 +46,6 @@ public class Rectangulo extends Forma {
         Rectangulo c1=new Rectangulo();
         System.out.println(c1.getBase()+c1.getAltura());
         System.out.println(c1.area());
-        System.out.println(c1.perimeter());
+        System.out.println(c1.perimetro());
     }
 }

@@ -2,7 +2,7 @@ package componentespc;
 
 import enums.Fabricante;
 
-public class Componente {
+public abstract class Componente {
     private Fabricante fabricante;
     private String modelo;
     private double precio;
@@ -54,8 +54,6 @@ public class Componente {
         this.stock = stock;
     }
 
-    public String quienSoy(){
-        return "";
-    }
+    public abstract String quienSoy();
 
 }

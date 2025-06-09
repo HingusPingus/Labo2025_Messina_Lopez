@@ -3,7 +3,7 @@ package vehiculos;
 import enums.Color;
 import enums.Marca;
 
-public class Automovil extends Vehiculo{
+public abstract class Automovil extends Vehiculo{
     private String patente;
 
     public Automovil(){
@@ -23,4 +23,5 @@ public class Automovil extends Vehiculo{
     public void setPatente(String patente) {
         this.patente = patente;
     }
+
 }

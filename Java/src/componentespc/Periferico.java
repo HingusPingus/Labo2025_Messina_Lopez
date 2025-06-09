@@ -2,7 +2,7 @@ package componentespc;
 
 import enums.Fabricante;
 
-public class Periferico extends Componente{
+public abstract class Periferico extends Componente{
     private int puertos;
 
     public Periferico() {

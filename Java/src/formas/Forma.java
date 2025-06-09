@@ -1,13 +1,9 @@
 package formas;
 
-public class Forma {
+public abstract class Forma {
 
-    public double area() {
-        return 0;
-    }
+    public abstract double area();
 
-    public double perimetro() {
-        return 0;
-    }
+    public abstract double perimetro();
 
 }

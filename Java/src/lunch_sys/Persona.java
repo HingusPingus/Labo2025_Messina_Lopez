@@ -1,6 +1,6 @@
 package lunch_sys;
 
-public class Persona {
+public abstract class Persona {
     private String nombre, apellido;
 
     public Persona(String nombre, String apellido) {

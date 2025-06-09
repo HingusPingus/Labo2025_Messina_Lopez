@@ -1,6 +1,6 @@
 package electronicos;
 
-public class Producto {
+public abstract class Producto {
     private String nombre;
     private double precio;
     private int stock;
@@ -41,7 +41,5 @@ public class Producto {
         this.precio = precio;
     }
 
-    public String getSeccion(){
-        return "";
-    }
+    public abstract String getSeccion();
 }
