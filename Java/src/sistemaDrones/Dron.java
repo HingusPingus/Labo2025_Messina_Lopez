@@ -1,15 +1,17 @@
-package SistemaDrones;
+package sistemaDrones;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
-public class Dron {
+public abstract class Dron {
     private String modelo;
     private LocalDate fechaAdq;
     private int carga;
     private static int id;
     private Estado estado;
+    private ArrayList<Mision> misiones;
 
-    public Dron(String modelo, LocalDate fechaAdq, int carga, Estado estado) {
+    public Dron(String modelo, LocalDate fechaAdq, int carga, Estado estado, ArrayList<Mision> misiones) {
         this.modelo = modelo;
         this.fechaAdq = fechaAdq;
         this.carga = carga;
@@ -17,6 +19,7 @@ public class Dron {
         if(estado==Estado.OPERATIVO || estado==Estado.ENVUELO){
             id+=1;
         }
+        this.misiones=misiones;
     }
 
     public String getModelo() {
@@ -49,6 +52,12 @@ public class Dron {
     public void setEstado(Estado estado) {
         this.estado = estado;
     }
+    public ArrayList<Mision> getMisiones() {
+        return misiones;
+    }
+    public void setMisiones(ArrayList<Mision> misiones) {
+        this.misiones = misiones;
+    }
 
     public void fixBateria(){
         if(carga>100){
@@ -68,4 +77,6 @@ public class Dron {
         }
         fixBateria();
     }
+
+    public abstract void actualizarMision(Mision mision);
 }
