@@ -2,25 +2,26 @@ package oracles;
 
 
 public class Clothing_LopezCalo {
+
+    
     private String description;
     private double price;
     private String size;
-    private double minPrice;
-    private double tax;
+    private static double minPrice=10;
+    private static double tax=0.2;
 
 
     public Clothing_LopezCalo(){
         this.description = "Black T-Shirt";
         this.price = 10.99;
         this.size = "M";
-        this.tax=0.2;
-        this.minPrice=10;
     }
     public Clothing_LopezCalo(String description, double price, String size){
         this.description = description;
         this.price = price;
         this.size = size;
     }
+    
     public String getDescription(){
         return this.description;
     }
@@ -40,5 +41,24 @@ public class Clothing_LopezCalo {
     }
     public void setSize(String size){
         this.size=size;
+    }
+    public static double getMinPrice() {
+        return minPrice;
+    }
+
+    public static void setMinPrice(double minPrice) {
+        Clothing_LopezCalo.minPrice = minPrice;
+    }
+
+    public static double getTax() {
+        return tax;
+    }
+
+    public static void setTax(double tax) {
+        Clothing_LopezCalo.tax = tax;
+    }
+    @Override
+    public String toString(){
+        return this.description+", "+this.price+", "+this.size;
     }
 }
