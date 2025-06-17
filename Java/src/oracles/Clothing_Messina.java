@@ -4,6 +4,9 @@ public class Clothing_Messina {
     private double price;
     private String size;
 
+    public final static double MIN_PRICE=10.0;
+    public final static double MIN_TAX=0.2;
+
     public Clothing_Messina(){
         this.description="cosa";
         this.price=10;
@@ -22,6 +25,10 @@ public class Clothing_Messina {
     }
     public String getSize(){
         return size;
+    }
+    @Override
+    public String toString(){
+        return getDesc()+","+ getSize()+","+getPrice();
     }
     
 }

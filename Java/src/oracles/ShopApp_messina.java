@@ -5,6 +5,7 @@ public class ShopApp_messina {
         double tax=0.2;
         double total=0;
         int measurement= 3;
+        System.out.println(Clothing_Messina.MIN_PRICE);
         Customer_Messina c1=new Customer_Messina("pinky", 3);
 
         Clothing_Messina item1=new Clothing_Messina("Blue Jacket", 20.9, "M");
@@ -17,6 +18,9 @@ public class ShopApp_messina {
         //System.out.println(item1.getDesc()+","+item1.getPrice()+","+item1.getSize());
         //System.out.println(item2.getDesc()+","+item2.getPrice()+","+item2.getSize());
         //total=(item2.getPrice()*2)+item1.getPrice();
+        for(Clothing_Messina item: c1.getItems()){
+            System.out.println("Item "+item);
+        }
         
         c1.setItems(items);
         c1.setSize(measurement);
