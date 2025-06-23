@@ -1,12 +1,13 @@
 package objetos;
 
 import enums.LibroEnum;
+import personas.Autor;
 import personas.Persona;
 import conceptos.Fecha;
 
 public class Libro{
     private String titulo;
-    private Persona autor;
+    private Autor autor;
     private int ISBN;
     private int paginas;
     private LibroEnum editorial;
@@ -14,7 +15,7 @@ public class Libro{
 
     public Libro(){
         this.titulo="Carlitos y el Sanguche de Milanesa Místico";
-        this.autor=new Persona();
+        this.autor=new Autor();
         this.ISBN=6991218;
         this.paginas=69;
         this.editorial=LibroEnum.EL_ATENEO;
@@ -22,13 +23,13 @@ public class Libro{
     }
     public Libro(String titulo){
         this.titulo=titulo;
-        this.autor=new Persona();
+        this.autor=new Autor();
         this.ISBN=6991218;
         this.paginas=69;
         this.editorial=LibroEnum.ATLÁNTIDA;
         this.fechaPublicacion= new Fecha(28,7,1986);
     }
-    public Libro(String titulo, Persona autor, int paginas, int ISBN, LibroEnum editorial, Fecha fechaPublicacion) {
+    public Libro(String titulo, Autor autor, int paginas, int ISBN, LibroEnum editorial, Fecha fechaPublicacion) {
         this.titulo = titulo;
         this.autor = autor;
         this.paginas = paginas;
@@ -45,11 +46,11 @@ public class Libro{
         this.titulo = titulo;
     }
 
-    public Persona getAutor() {
+    public Autor getAutor() {
         return autor;
     }
 
-    public void setAutor(Persona autor) {
+    public void setAutor(Autor autor) {
         this.autor = autor;
     }
 

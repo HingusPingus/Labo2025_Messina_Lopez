@@ -3,29 +3,38 @@ package mascotas;
 import personas.Persona;
 
 public class Pajarito extends Terrestre{
-    private boolean cantor;
     private String canto;
 
-    public Pajarito(String nombre, Persona duenio, String canto) {
+    public Pajarito(String nombre, Duenio duenio, String canto) {
         super(nombre, duenio);
         this.canto = canto;
-        this.cantor=true;
     }
 
-    public Pajarito(String nombre, Persona duenio) {
+    public Pajarito(String nombre, Duenio duenio) {
         super(nombre, duenio);
         this.canto = "pio";
-        this.cantor=true;
+    }
+    public Pajarito(Duenio duenio) {
+        super(duenio);
+        this.canto="pio";
+    }
+
+    public String getCanto() {
+        return canto;
+    }
+
+    public void setCanto(String canto) {
+        this.canto = canto;
     }
 
     @Override
-    public String saludo(Persona usuario) {
+    public String saludo(Duenio usuario) {
         String saludo="";
         int felicidad=this.getFelicidad();
         if(usuario.equals(this.getDuenio())) {
             for (int i = 0; i < felicidad; i++) {
 
-                saludo = saludo + canto;
+                saludo = saludo + canto+" ";
 
             }
             if(felicidad>1){

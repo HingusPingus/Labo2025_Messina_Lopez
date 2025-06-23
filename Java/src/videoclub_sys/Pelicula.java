@@ -1,6 +1,7 @@
 package videoclub_sys;
 
 import enums.Genero;
+import personas.Autor;
 import personas.Persona;
 
 import java.time.Duration;
@@ -12,11 +13,11 @@ public class Pelicula {
     private String nombre;
     private Genero genero;
     private Duration duracion;
-    private ArrayList<Persona> directores;
-    private ArrayList<Persona> actores;
+    private ArrayList<Autor> directores;
+    private ArrayList<Autor> actores;
     private ArrayList<String> idiomas;
 
-    public Pelicula(String nombre, Genero genero, Duration duracion, ArrayList<Persona> directores, ArrayList<String> idiomas, ArrayList<Persona> actores) {
+    public Pelicula(String nombre, Genero genero, Duration duracion, ArrayList<Autor> directores, ArrayList<String> idiomas, ArrayList<Autor> actores) {
         this.nombre = nombre;
         this.genero = genero;
         this.duracion = duracion;
@@ -28,10 +29,10 @@ public class Pelicula {
         nombre="la paraste";
         genero= Genero.COMEDIA;
         duracion= Duration.ofHours(2);
-        directores= new ArrayList<Persona>();
-        directores.add(new Persona());
-        actores= new ArrayList<Persona>();
-        actores.add(new Persona());
+        directores= new ArrayList<>();
+        directores.add(new Autor());
+        actores= new ArrayList<>();
+        actores.add(new Autor());
         idiomas= new ArrayList<String>();
         idiomas.add("inglés");
     }
@@ -42,10 +43,10 @@ public class Pelicula {
     public void setGenero(Genero genero) {this.genero = genero;}
     public Duration getDuracion() {return duracion;}
     public void setDuracion(Duration duracion) {this.duracion = duracion;}
-    public ArrayList<Persona> getDirectores() {return directores;}
-    public void setDirectores(ArrayList<Persona> directores) {this.directores = directores;}
-    public ArrayList<Persona> getActores() {return actores;}
-    public void setActores(ArrayList<Persona> actores) {this.actores = actores;}
+    public ArrayList<Autor> getDirectores() {return directores;}
+    public void setDirectores(ArrayList<Autor> directores) {this.directores = directores;}
+    public ArrayList<Autor> getActores() {return actores;}
+    public void setActores(ArrayList<Autor> actores) {this.actores = actores;}
     public ArrayList<String> getIdiomas() {return idiomas;}
     public void setIdiomas(ArrayList<String> idiomas) {this.idiomas = idiomas;}
 

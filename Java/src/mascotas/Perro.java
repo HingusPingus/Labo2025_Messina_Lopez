@@ -6,12 +6,15 @@ public class Perro extends Terrestre{
     public Perro(){
         super();
     }
-    public Perro(String nombre, Persona duenio) {
+    public Perro(String nombre, Duenio duenio) {
         super(nombre, duenio);
+    }
+    public Perro (Duenio duenio) {
+        super(duenio);
     }
 
     @Override
-    public String saludo(Persona usuario){
+    public String saludo(Duenio usuario){
         String saludo="";
         int felicidad=this.getFelicidad();
         for (int i = 0; i <felicidad ; i++) {

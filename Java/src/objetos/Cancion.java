@@ -1,5 +1,6 @@
 package objetos;
 
+import personas.Autor;
 import personas.Persona;
 
 public class Cancion {
@@ -7,7 +8,7 @@ public class Cancion {
     private Persona autor;
 
     public Cancion(){
-        this.autor=new Persona();
+        this.autor=new Autor();
         this.titulo="Puente";
     }
 

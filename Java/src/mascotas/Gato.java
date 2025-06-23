@@ -4,20 +4,31 @@ import personas.Persona;
 
 public class Gato extends Terrestre{
 
+    public Gato() {
+        super();
+    }
+
+    public Gato(String nombre, Duenio duenio) {
+        super(nombre, duenio);
+    }
+    public Gato( Duenio duenio) {
+        super(duenio);
+    }
+
     @Override
-    public String saludo(Persona usuario){
+    public String saludo(Duenio usuario){
         String saludo="";
         int felicidad=this.getFelicidad();
         for (int i = 0; i <felicidad ; i++) {
-            if(usuario.equals(this.getDuenio())){
-                saludo=saludo+"MIAU!";
+            if(this.getDuenio().equals(usuario)){
+                saludo=saludo+"MIAU! ";
             }
             else{
-                saludo=saludo+"miau";
+                saludo=saludo+"miau ";
             }
         }
         if(felicidad>1){
-            this.setFelicidad(felicidad--);
+            this.setFelicidad(felicidad-1);
         }
         return saludo;
     }

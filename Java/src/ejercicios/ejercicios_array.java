@@ -1,5 +1,6 @@
 package ejercicios;
 
+import personas.Autor;
 import personas.Persona;
 
 import java.util.ArrayList;
@@ -8,12 +9,12 @@ public class ejercicios_array {
     public static void main(String[] args) {
         ArrayList<Integer> numeros = new ArrayList<Integer>();
         ArrayList<String> palabras=new ArrayList<String>();
-        ArrayList<Persona> personas=new ArrayList<Persona>();
+        ArrayList<Autor> personas=new ArrayList<>();
         numeros.add(5);
         numeros.add(6);
         numeros.add(3);
         palabras.add("Lucas");
-        personas.add(new Persona("Carlos",45,"Jose Cubas 6969"));
+        personas.add(new Autor("Carlos",45,"Jose Cubas 6969"));
         int aux=0;
         char letra='l';
 

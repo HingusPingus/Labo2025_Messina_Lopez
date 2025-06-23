@@ -9,8 +9,11 @@ public abstract class Terrestre extends Mascota {
         super();
         this.felicidad = 1;
     }
-
-    public Terrestre(String nombre, Persona duenio) {
+    public Terrestre( Duenio duenio) {
+        super(duenio);
+        this.felicidad = 1;
+    }
+    public Terrestre(String nombre, Duenio duenio) {
         super(nombre, duenio);
         this.felicidad = 1;
     }
@@ -22,7 +25,7 @@ public abstract class Terrestre extends Mascota {
     public void setFelicidad(int felicidad) {
         this.felicidad = felicidad;
     }
-    public void alimentar(){
+    public void alimentarM(){
         this.felicidad++;
     }
 }

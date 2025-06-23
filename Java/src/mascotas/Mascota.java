@@ -4,14 +4,18 @@ import personas.Persona;
 
 public abstract class Mascota {
     private String nombre;
-    private Persona duenio;
+    private Duenio duenio;
 
     public Mascota(){
         this.nombre="Carlitos";
-        this.duenio=new Persona();
+        this.duenio=new Duenio();
     }
 
-    public Mascota(String nombre, Persona duenio) {
+    public Mascota(Duenio duenio) {
+        this.duenio = duenio;
+    }
+
+    public Mascota(String nombre, Duenio duenio) {
         this.nombre = nombre;
         this.duenio = duenio;
     }
@@ -24,16 +28,17 @@ public abstract class Mascota {
         this.nombre = nombre;
     }
 
-    public Persona getDuenio() {
+    public Duenio getDuenio() {
         return duenio;
     }
 
-    public void setDuenio(Persona duenio) {
+    public void setDuenio(Duenio duenio) {
         this.duenio = duenio;
     }
 
-    public abstract String saludo(Persona usuario);
+    public abstract String saludo(Duenio usuario);
 
     public abstract String quienSoy();
+    public abstract void alimentarM();
 }
 
