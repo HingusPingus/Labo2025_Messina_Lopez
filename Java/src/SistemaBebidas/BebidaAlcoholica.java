@@ -5,7 +5,7 @@ public class BebidaAlcoholica extends Bebida{
 
     public BebidaAlcoholica(String nombre, int cantidadAlcohol) {
         super(nombre);
-        this.setCoeficienteNegatividad(getCantidadAlcohol()*20);
+        this.setCoeficienteNegatividad(cantidadAlcohol*20);
         this.setCoeficientePositividad(0);
         this.cantidadAlcohol = cantidadAlcohol;
     }

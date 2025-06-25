@@ -5,7 +5,7 @@ public class BebidaAzucarada extends Bebida{
 
     public BebidaAzucarada(String nombre, int cantAzucar) {
         super(nombre);
-        this.setCoeficienteNegatividad(getCantAzucar()*10);
+        this.setCoeficienteNegatividad(cantAzucar*10);
         this.setCoeficientePositividad(1);
         this.cantAzucar = cantAzucar;
     }

@@ -14,6 +14,21 @@ public class Cliente extends Persona {
         this.bebidasPedidas=bebidasPedidas;
     }
 
+    public int getDNI() {
+        return DNI;
+    }
+
+    public void setDNI(int DNI) {
+        this.DNI = DNI;
+    }
+
+    public ArrayList<Bebida> getBebidasPedidas() {
+        return bebidasPedidas;
+    }
+
+    public void setBebidasPedidas(ArrayList<Bebida> bebidasPedidas) {
+        this.bebidasPedidas = bebidasPedidas;
+    }
 
     public int sumaCoeficientePorTipo() {
         int sumNeutra = 0;
