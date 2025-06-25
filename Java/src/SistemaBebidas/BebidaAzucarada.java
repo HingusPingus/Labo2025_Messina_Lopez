@@ -17,4 +17,9 @@ public class BebidaAzucarada extends Bebida{
     public void setCantAzucar(int cantAzucar) {
         this.cantAzucar = cantAzucar;
     }
+
+    @Override
+    public int sumaCoeficiente() {
+        return getCoeficientePositividad()-getCoeficienteNegatividad();
+    }
 }

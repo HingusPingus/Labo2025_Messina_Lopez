@@ -32,4 +32,5 @@ public abstract class Bebida {
     public void setCoeficientePositividad(int coeficientePositividad) {
         CoeficientePositividad = coeficientePositividad;
     }
+    public abstract int sumaCoeficiente();
 }

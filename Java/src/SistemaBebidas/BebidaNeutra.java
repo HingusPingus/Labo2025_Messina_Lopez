@@ -7,4 +7,9 @@ public class BebidaNeutra extends Bebida{
         this.setCoeficienteNegatividad(coeficienteN);
         this.setCoeficientePositividad(coeficienteP);
     }
+
+    @Override
+    public int sumaCoeficiente() {
+        return getCoeficientePositividad()-getCoeficienteNegatividad();
+    }
 }

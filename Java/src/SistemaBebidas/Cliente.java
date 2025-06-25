@@ -14,9 +14,38 @@ public class Cliente extends Persona {
         this.bebidasPedidas=bebidasPedidas;
     }
 
-    public int sumaCoeficiente(){
-        for(Bebida b:this.bebidasPedidas){
 
+    public int sumaCoeficientePorTipo() {
+        int sumNeutra = 0;
+        int cantNeutra = 0;
+        int sumAzucarada = 0;
+        int cantAzucarada = 0;
+        int sumAlcoholica = 0;
+        int cantAlcoholica = 0;
+
+        for (Bebida b : bebidasPedidas) {
+            if (b instanceof BebidaNeutra) {
+                sumNeutra += b.sumaCoeficiente();
+                cantNeutra++;
+            }
+            else if (b instanceof BebidaAzucarada) {
+                sumAzucarada += b.sumaCoeficiente();
+                cantAzucarada++;
+            }
+            else if (b instanceof BebidaAlcoholica) {
+                sumAlcoholica += b.sumaCoeficiente();
+                cantAlcoholica++;
+            }
+        }
+        int res = (sumNeutra * cantNeutra) +
+                (sumAzucarada * cantAzucarada) +
+                (sumAlcoholica * cantAlcoholica);
+        return res;
+    }
+
+    public void tomoBebida(ArrayList<Bebida> bebidas){
+        for(Bebida b:bebidas){
+            bebidasPedidas.add(b);
         }
     }
 }

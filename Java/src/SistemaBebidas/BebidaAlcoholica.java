@@ -17,4 +17,9 @@ public class BebidaAlcoholica extends Bebida{
     public void setCantidadAlcohol(int cantidadAlcohol) {
         this.cantidadAlcohol = cantidadAlcohol;
     }
+
+    @Override
+    public int sumaCoeficiente() {
+        return getCoeficientePositividad()-getCoeficienteNegatividad();
+    }
 }
