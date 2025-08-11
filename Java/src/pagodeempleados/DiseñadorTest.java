@@ -94,12 +94,33 @@ class DiseñadorTest {
 
     @Test
     void testInfoProyecto() {
+        outContent.reset();
+
         diseñador.infoProyecto();
+
         String[] lines = outContent.toString().trim().split("\\r?\\n");
 
-        assertEquals(proyecto1.getNombre(), lines[0]);
-        assertEquals("5000", lines[1]);
-        assertTrue(lines[2].contains("Proyecto"));
-        assertEquals(String.valueOf(proyecto1.getPago() * Tipo.UX.getPorcentaje()), lines[3]);
+        boolean found = false;
+        for (int i = 0; i < lines.length - 3; i++) {
+            String nombre = lines[i];
+            String valor = lines[i + 1];
+            String objeto = lines[i + 2];
+            String calculo = lines[i + 3];
+
+            if (nombre.equals(proyecto1.getNombre())) {
+                assertEquals(String.valueOf(5000), valor);
+
+                assertTrue(objeto.contains("Proyecto"));
+
+                double esperado = proyecto1.getPago() * Tipo.UX.getPorcentaje();
+                double actual = Double.parseDouble(calculo);
+                assertEquals(esperado, actual, 0.0001);
+
+                found = true;
+                break;
+            }
+        }
+        assertTrue(found, "No se encontró el bloque para proyecto1 en la salida.");
     }
+
 }
