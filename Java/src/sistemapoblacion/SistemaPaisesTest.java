@@ -19,11 +19,9 @@ class SistemaPaisesTest {
 
     @BeforeEach
     void setUp() {
-        // Create barrios
         barrio1 = new Barrio("Barrio A", 101, coords(1.0, 2.0), 1000);
         barrio2 = new Barrio("Barrio B", 102, coords(3.0, 4.0), 2000);
 
-        // Create ciudades
         HashMap<Integer, Barrio> barriosC1 = new HashMap<>();
         barriosC1.put(barrio1.getCodigo(), barrio1);
         ciudad1 = new Ciudad("Ciudad X", 201, coords(5.0, 6.0), barriosC1);
@@ -32,7 +30,6 @@ class SistemaPaisesTest {
         barriosC2.put(barrio2.getCodigo(), barrio2);
         ciudad2 = new Ciudad("Ciudad Y", 202, coords(7.0, 8.0), barriosC2);
 
-        // Create provincias
         HashMap<Integer, Ciudad> ciudadesP1 = new HashMap<>();
         ciudadesP1.put(ciudad1.getCodigo(), ciudad1);
         provincia1 = new Provincia("Provincia Uno", 301, coords(9.0, 10.0), ciudadesP1);
@@ -41,7 +38,6 @@ class SistemaPaisesTest {
         ciudadesP2.put(ciudad2.getCodigo(), ciudad2);
         provincia2 = new Provincia("Provincia Dos", 302, coords(11.0, 12.0), ciudadesP2);
 
-        // Create países
         HashMap<Integer, Provincia> provinciasPais1 = new HashMap<>();
         provinciasPais1.put(provincia1.getCodigo(), provincia1);
         pais1 = new Pais("Pais Alfa", 401, coords(13.0, 14.0), provinciasPais1);
@@ -50,7 +46,6 @@ class SistemaPaisesTest {
         provinciasPais2.put(provincia2.getCodigo(), provincia2);
         pais2 = new Pais("Pais Beta", 402, coords(15.0, 16.0), provinciasPais2);
 
-        // Create continentes
         HashMap<Integer, Pais> paisesCont1 = new HashMap<>();
         paisesCont1.put(pais1.getCodigo(), pais1);
         continente1 = new Continente("Continente Norte", 501, coords(17.0, 18.0), paisesCont1);
@@ -59,7 +54,6 @@ class SistemaPaisesTest {
         paisesCont2.put(pais2.getCodigo(), pais2);
         continente2 = new Continente("Continente Sur", 502, coords(19.0, 20.0), paisesCont2);
 
-        // Create sistema
         HashMap<Integer, Continente> continentesSistema = new HashMap<>();
         continentesSistema.put(continente1.getCodigo(), continente1);
         continentesSistema.put(continente2.getCodigo(), continente2);
@@ -131,9 +125,9 @@ class SistemaPaisesTest {
 
     @Test
     void testPoblacionCodigo() {
-        assertEquals(2000, sistema.poblacionCodigo(402)); // Código del país Beta
-        assertEquals(1000, sistema.poblacionCodigo(401)); // Código del país Alfa
-        assertEquals(2000, sistema.poblacionCodigo(202)); // Ciudad Y
-        assertEquals(1000, sistema.poblacionCodigo(101)); // Barrio A
+        assertEquals(2000, sistema.poblacionCodigo(402));
+        assertEquals(1000, sistema.poblacionCodigo(401));
+        assertEquals(2000, sistema.poblacionCodigo(202));
+        assertEquals(1000, sistema.poblacionCodigo(101));
     }
 }
