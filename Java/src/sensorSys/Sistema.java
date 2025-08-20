@@ -2,6 +2,7 @@ package sensorSys;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Sistema {
     ArrayList<Sensor> sensores;
@@ -22,6 +23,23 @@ public class Sistema {
 
     public void setSensores(ArrayList<Sensor> sensores) {
         this.sensores = sensores;
+    }
+
+    public void masInfoDeDispositivo(){
+        int index;
+        Scanner input=new Scanner(System.in);
+        try{
+            index= input.nextInt();
+            try{
+                sensores.get(index).info();
+            }
+            catch(ArrayIndexOutOfBoundsException a){
+                System.err.println("no hay un sensor en esa posicion");
+            }
+        }
+        catch(IllegalArgumentException i){
+            System.err.println("pone un numero");
+        }
     }
 
     public static void main(String[] args) {

@@ -1,15 +1,28 @@
 package personas;
 
+import java.time.LocalDate;
+
 public abstract class Persona {
     private String nombre;
     private String apellido;
     private int edad;
     private String direccion;
+    private LocalDate fechaNacimiento;
+    private String mail;
 
     public Persona(){
         this.nombre="carlos";
         this.edad=38;
         this.direccion="Bulgaria 4385";
+    }
+
+    public Persona(String nombre, String apellido, int edad, String direccion, LocalDate fechaNacimiento,String mail) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.edad = edad;
+        this.direccion = direccion;
+        this.fechaNacimiento = fechaNacimiento;
+        this.mail=mail;
     }
 
     public Persona(String nombre, int edad, String direccion){

@@ -57,10 +57,32 @@ public class Cliente extends Persona {
                 (sumAlcoholica * cantAlcoholica);
         return res;
     }
-
-    public void tomoBebida(ArrayList<Bebida> bebidas){
-        for(Bebida b:bebidas){
-            bebidasPedidas.add(b);
+    public void tomarBebida(Bebida bebida, int cantidad, ArrayList<Bebida> bebidas){
+        try{
+            if(bebidas.isEmpty()){
+                throw new NullPointerException("No hay bebidas.");
+            }
+            int cant=0;
+            for(Bebida b:bebidas){
+                if(b==bebida){
+                    cant++;
+                }
+            }
+            if(cant==0){
+                throw new NullPointerException("No hay bebidas de las que pidio.");
+            }
+            else if (cant<cantidad){
+                throw new NoHayBebidasSuficientesException("No hay bebidas suficientes.");
+            }
+            else{
+                for(int i=0;i<cantidad;i++){
+                    bebidasPedidas.add(bebida);
+                }
+            }
+        }
+        catch(NullPointerException | NoHayBebidasSuficientesException n){
+            System.err.println(n);
         }
     }
+
 }

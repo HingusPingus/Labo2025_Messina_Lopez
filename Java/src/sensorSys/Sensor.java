@@ -61,4 +61,7 @@ public abstract class Sensor {
     public void alarma(){
 
     }
+    public void info(){
+        System.out.println("hola");
+    }
 }

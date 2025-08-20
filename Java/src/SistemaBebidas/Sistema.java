@@ -29,18 +29,42 @@ public class Sistema {
         this.bebidas = bebidas;
     }
 
+    public void addCliente(Cliente cliente){
+        try{
+            for(Cliente c:clientes){
+                if(cliente.getDNI()==c.getDNI()){
+                    throw new DNIyaEstaException("El dni puesto ya esta en sistema.");
+                }
+            }
+            clientes.add(cliente);
+        }
+        catch(DNIyaEstaException d){
+            System.out.println(d);
+        }
+    }
+
+
+
     public Cliente clienteMejorHidratacion(){
         Cliente mejor = null;
         int maxHidratacion = Integer.MIN_VALUE;
-
-        for (Cliente c : this.getClientes()) {
-            int hidratacion = c.sumaCoeficientePorTipo();
-            if (hidratacion > maxHidratacion) {
-                maxHidratacion = hidratacion;
-                mejor = c;
+        try {
+            if(clientes.isEmpty()){
+                throw new NullPointerException("No hay ningun cliente.");
             }
+            for (Cliente c : this.getClientes()) {
+                int hidratacion = c.sumaCoeficientePorTipo();
+                if (hidratacion > maxHidratacion) {
+                    maxHidratacion = hidratacion;
+                    mejor = c;
+                }
+            }
+            return mejor;
         }
-        return mejor;
+        catch(NullPointerException n){
+            System.out.println(n);
+            return null;
+        }
     }
 
 

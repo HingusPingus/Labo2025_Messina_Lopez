@@ -49,11 +49,11 @@ public class PC {
                 out=true;
             }
         }
-        if(in==true && out==true){
+        if(in && out && cpu!=null){
             return true;
         }
         else{
-            return false;
+            throw new ComponenteFaltanteException("No tiene los componentes que se requieren para comprar esta pc");
         }
 
     }

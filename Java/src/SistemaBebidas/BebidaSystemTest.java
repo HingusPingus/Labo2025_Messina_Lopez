@@ -39,43 +39,39 @@ import java.util.ArrayList;
 
         @Test
         public void testBebidaAlcoholicaSumaCoeficiente() {
-            assertEquals(-300, bebidaAlcoholica.sumaCoeficiente()); // 0 - 300
+            assertEquals(-300, bebidaAlcoholica.sumaCoeficiente());
         }
 
 
 
         @Test
         public void testBebidaAzucaradaSumaCoeficiente() {
-            assertEquals(-299, bebidaAzucarada.sumaCoeficiente()); // 1 - 300
+            assertEquals(-299, bebidaAzucarada.sumaCoeficiente());
         }
 
 
 
         @Test
         public void testBebidaNeutraSumaCoeficiente() {
-            assertEquals(8, bebidaNeutra.sumaCoeficiente()); // 10 - 2
+            assertEquals(8, bebidaNeutra.sumaCoeficiente());
         }
 
 
         @Test
         public void testSumaCoeficientePorTipo() {
-            // Alcoholica: -300 * 1 = -300
-            // Azucarada: -299 * 1 = -299
-            // Total: -300 + -299 = -599
             assertEquals(-599, cliente.sumaCoeficientePorTipo());
         }
 
         @Test
-        public void testTomoBebida() {
+        public void testTomarBebida() {
             ArrayList<Bebida> nuevasBebidas = new ArrayList<>();
             nuevasBebidas.add(bebidaNeutra);
 
-            cliente.tomoBebida(nuevasBebidas);
+            cliente.tomarBebida(bebidaNeutra, 1, nuevasBebidas);
             assertEquals(3, cliente.getBebidasPedidas().size());
             assertTrue(cliente.getBebidasPedidas().contains(bebidaNeutra));
         }
 
-        // Sistema tests
         @Test
         public void testSistemaConstructor() {
             assertEquals(1, sistema.getClientes().size());
@@ -84,20 +80,17 @@ import java.util.ArrayList;
 
         @Test
         public void testClienteMejorHidratacion() {
-            // Create a better hydrated client
             ArrayList<Bebida> bebidasHidratado = new ArrayList<>();
             bebidasHidratado.add(new BebidaNeutra("Agua Mineral", 1, 20));
             Cliente hidratado = new Cliente("Maria", "Gomez", 25, "Avenida 456", 87654321, bebidasHidratado);
 
             sistema.getClientes().add(hidratado);
 
-            // Maria should be better hydrated (20-1)*1 = 19 vs Juan's -599
             assertEquals(hidratado, sistema.clienteMejorHidratacion());
         }
 
         @Test
         public void testClienteMejorHidratacionWithNegativeValues() {
-            // In case all clients have negative hydration
             assertEquals(cliente, sistema.clienteMejorHidratacion());
         }
     }

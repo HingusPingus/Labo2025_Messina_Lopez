@@ -61,7 +61,7 @@ public class SistemaCompraGamer {
         }
     }
 
-    public void venderPC(){
+    public void venderPC() throws StockException {
         boolean posible=false;
         ArrayList<Componente> componentes1= new ArrayList<>();
         if(this.pc.confirmacion()){
@@ -73,12 +73,18 @@ public class SistemaCompraGamer {
                             posible=checkStock(c1);
                             componentes1.add(c1);
                         }
+                        else{
+                            throw new StockException("Este componente no tiene stock: "+c1);
+                        }
                     }
                 }
                 if(c1.equals(pc.getCpu())){
                     if(posible){
                         posible=checkStock(c1);
                         componentes1.add(c1);
+                    }
+                    else{
+                        throw new StockException("Este componente no tiene stock: "+c1);
                     }
                 }
             }
