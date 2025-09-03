@@ -28,5 +28,8 @@ public abstract class Participante extends Persona {
 
             }
         }
+        catch (Exception e){
+
+        }
     }
 }
