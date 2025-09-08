@@ -1,11 +1,11 @@
-package CampeonatoArcoFlecha;
+package campeonatoArcoFlecha;
 
 import java.util.HashSet;
 
-public class BeneficioComida extends Beneficio implements Acumulable{
+public class BeneficioGaseosa extends Beneficio implements Acumulable{
     HashSet<String> tragos;
 
-    public BeneficioComida(String nombreBeneficio, String nombreCreador, HashSet<String> tragos) {
+    public BeneficioGaseosa(String nombreBeneficio, String nombreCreador, HashSet<String> tragos) {
         super(nombreBeneficio, nombreCreador);
         this.tragos = tragos;
     }
@@ -20,6 +20,6 @@ public class BeneficioComida extends Beneficio implements Acumulable{
 
     @Override
     public int aplicarDescuentoExtra() {
-        return 4500;
+        return 1000;
     }
 }

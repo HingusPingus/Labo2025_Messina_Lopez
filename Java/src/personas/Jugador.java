@@ -59,9 +59,7 @@ public class Jugador extends Persona {
         this.numeroCamiseta = numeroCamiseta;
     }
 
-    public Fecha getFechaNacimiento() {
-        return fechaNacimiento;
-    }
+
 
     public void setFechaNacimiento(Fecha fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;

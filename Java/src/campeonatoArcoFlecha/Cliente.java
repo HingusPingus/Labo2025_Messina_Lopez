@@ -1,6 +1,4 @@
-package CampeonatoArcoFlecha;
-
-import personas.Persona;
+package campeonatoArcoFlecha;
 
 public class Cliente {
     private String nombre;

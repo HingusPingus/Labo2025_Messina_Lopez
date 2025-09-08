@@ -46,9 +46,7 @@ public class Alumno extends Persona {
         this.notas = notas;
     }
 
-    public Fecha getFechaNacimiento() {
-        return fechaNacimiento;
-    }
+
 
     public void setFechaNacimiento(Fecha fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;

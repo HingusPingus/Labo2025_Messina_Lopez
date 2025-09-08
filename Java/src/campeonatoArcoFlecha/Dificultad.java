@@ -1,4 +1,4 @@
-package CampeonatoArcoFlecha;
+package campeonatoArcoFlecha;
 
 public enum Dificultad {
     FACIL, NORMAL, DIFICIL

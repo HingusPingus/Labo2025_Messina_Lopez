@@ -1,4 +1,4 @@
-package CampeonatoArcoFlecha;
+package campeonatoArcoFlecha;
 
 public abstract class Beneficio {
     private String nombreBeneficio;

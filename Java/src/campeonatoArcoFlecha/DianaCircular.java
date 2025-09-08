@@ -1,4 +1,4 @@
-package CampeonatoArcoFlecha;
+package campeonatoArcoFlecha;
 
 import java.util.HashMap;
 

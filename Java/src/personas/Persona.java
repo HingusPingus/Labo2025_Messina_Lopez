@@ -16,7 +16,15 @@ public abstract class Persona {
         this.direccion="Bulgaria 4385";
     }
 
-    public Persona(String nombre, String apellido, int edad, String direccion, LocalDate fechaNacimiento,String mail) {
+    public LocalDate getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    public void setFechaNacimiento(LocalDate fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
+    }
+
+    public Persona(String nombre, String apellido, int edad, String direccion, LocalDate fechaNacimiento, String mail) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.edad = edad;
