@@ -61,6 +61,54 @@ public class Joven extends Paciente implements Tratamiento{
         }
     }
 
+    public static int getEdadMinima() {
+        return edadMinima;
+    }
+
+    public static void setEdadMinima(int edadMinima) {
+        Joven.edadMinima = edadMinima;
+    }
+
+    public static int getEdadMaxima() {
+        return edadMaxima;
+    }
+
+    public static void setEdadMaxima(int edadMaxima) {
+        Joven.edadMaxima = edadMaxima;
+    }
+
+    public HashSet<String> getActividadesFisicas() {
+        return actividadesFisicas;
+    }
+
+    public void setActividadesFisicas(HashSet<String> actividadesFisicas) {
+        this.actividadesFisicas = actividadesFisicas;
+    }
+
+    public int getDiasTeoricos() {
+        return diasTeoricos;
+    }
+
+    public void setDiasTeoricos(int diasTeoricos) {
+        this.diasTeoricos = diasTeoricos;
+    }
+
+    public int getDiasTratamiento() {
+        return diasTratamiento;
+    }
+
+    public void setDiasTratamiento(int diasTratamiento) {
+        this.diasTratamiento = diasTratamiento;
+    }
+
+    public boolean isTratamientoEmpezado() {
+        return tratamientoEmpezado;
+    }
+
+    public void setTratamientoEmpezado(boolean tratamientoEmpezado) {
+        this.tratamientoEmpezado = tratamientoEmpezado;
+    }
+
     @Override
     public double calcularPrecio() {
         if(this.getFechaNacimiento().getYear()%2==1){

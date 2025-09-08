@@ -34,8 +34,8 @@ class EleccionesTest {
 
     @Test
     void testTrabajadorEnviarMensajeDentroHorario() {
-        trabajador.setHorario_entrada(LocalTime.MIN);  // 00:00
-        trabajador.setHorario_salida(LocalTime.MAX);  // 23:59
+        trabajador.setHorario_entrada(LocalTime.MIN);
+        trabajador.setHorario_salida(LocalTime.MAX);
         String mensaje = trabajador.enviarMensaje();
         assertTrue(mensaje.contains("te invito a que votes"));
     }
@@ -85,8 +85,6 @@ class EleccionesTest {
         partido.addMensajero(paloma);
 
         assertEquals(3, partido.getMensajeros().size());
-
-        // No falla aunque imprime en consola
         partido.hacerCampaña();
     }
 }

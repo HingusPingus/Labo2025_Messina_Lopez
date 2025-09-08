@@ -59,6 +59,38 @@ public class Niño extends Paciente implements Tratamiento{
         }
     }
 
+    public int getTolerancia() {
+        return tolerancia;
+    }
+
+    public void setTolerancia(int tolerancia) {
+        this.tolerancia = tolerancia;
+    }
+
+    public int getDiasTeoricos() {
+        return diasTeoricos;
+    }
+
+    public void setDiasTeoricos(int diasTeoricos) {
+        this.diasTeoricos = diasTeoricos;
+    }
+
+    public int getDiasTratamiento() {
+        return diasTratamiento;
+    }
+
+    public void setDiasTratamiento(int diasTratamiento) {
+        this.diasTratamiento = diasTratamiento;
+    }
+
+    public boolean isTratamientoEmpezado() {
+        return tratamientoEmpezado;
+    }
+
+    public void setTratamientoEmpezado(boolean tratamientoEmpezado) {
+        this.tratamientoEmpezado = tratamientoEmpezado;
+    }
+
     @Override
     public double calcularPrecio() {
         return 450000*tolerancia;
