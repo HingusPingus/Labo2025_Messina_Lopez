@@ -1,4 +1,4 @@
-package oracle;
+package oracles;
 
 import java.util.ArrayList;
 

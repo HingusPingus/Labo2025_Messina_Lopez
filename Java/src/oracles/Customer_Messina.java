@@ -1,4 +1,4 @@
-package oracle;
+package oracles;
 public class Customer_Messina {
 private String name;
 private String size;

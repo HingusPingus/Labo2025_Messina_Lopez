@@ -1,4 +1,4 @@
-package oracle;
+package oracles;
 
 public class DepartmentsMain_Messina {
     public static void main(String[] args) {

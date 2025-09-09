@@ -1,4 +1,4 @@
-package oracle;
+package oracles;
 public class ShopApp_messina {
     
     public static void main(String[] args) {

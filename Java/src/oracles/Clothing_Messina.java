@@ -1,4 +1,4 @@
-package oracle;
+package oracles;
 public class Clothing_Messina {
     private String description;
     private double price;
