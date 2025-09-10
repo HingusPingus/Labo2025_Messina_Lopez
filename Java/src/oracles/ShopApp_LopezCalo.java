@@ -1,5 +1,5 @@
 package oracles;
-
+import java.util.Arrays;
 public class ShopApp_LopezCalo {
 
 
@@ -15,18 +15,51 @@ public class ShopApp_LopezCalo {
         Clothing_LopezCalo item2= new Clothing_LopezCalo("Orange T-Shirt",10.5,"S");
         Clothing_LopezCalo item3= new Clothing_LopezCalo("Green Scarf",5,"S");
         Clothing_LopezCalo item4= new Clothing_LopezCalo("Blue T-Shirt",10.5,"S");
-        c1.addItem(item1);
-        c1.addItem(item2);
-        c1.addItem(item3);
-        c1.addItem(item4);
+        Clothing_LopezCalo [] items={item1,item2,item3,item4};
+        c1.setItems(items);
+        /*try {
+            Itemlist list = new Itemlist(items);
+            Routing routing = Routing.builder()
+            .get("/items",list).build();
+            ServerConfiguration config = ServerConfiguration.builder()
+                    .bindAddress(InetAddress.getLocalHost())
+                    .port(8888).build();
+            WebServer ws = WebServer.create(config,routing);
+            ws.start();
+        } catch (UnknownHostException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        } */
         System.out.println("Welcome " + c1.getName());
         for (Clothing_LopezCalo item : c1.getItems()) {
             System.out.println(item.toString());
         }
         total=c1.getTotalClothingCost();
+        int i=0;
+        double avg = 0;
+        for(Clothing_LopezCalo item:c1.getItems()){
+
+            if(item.getSize().equals("L")){
+                i++;
+                avg+=item.getPrice();
+            }
+            
+            
+        }
+        try{
+            avg=avg/i;
+
+            System.out.println("average: "+avg+" count: "+i);
+        }
+        catch(ArithmeticException e){
+            System.out.println("don't divide by 0");
+        }
        
         System.out.println(total);
-
+        Arrays.sort(c1.getItems());
+        for (Clothing_LopezCalo item : c1.getItems()) {
+            System.out.println(item.toString());
+        }
     }
 
 }

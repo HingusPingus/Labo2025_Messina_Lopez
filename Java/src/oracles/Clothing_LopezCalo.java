@@ -1,7 +1,7 @@
 package oracles;
 
 
-public class Clothing_LopezCalo {
+public class Clothing_LopezCalo implements Comparable<Clothing_LopezCalo> {
 
     
     private String description;
@@ -61,4 +61,9 @@ public class Clothing_LopezCalo {
     public String toString(){
         return this.description+", "+this.price+", "+this.size;
     }
+    @Override
+    public int compareTo(Clothing_LopezCalo c){
+        return this.description.compareTo(c.getDescription());  
+    }
+
 }
