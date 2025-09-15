@@ -1,0 +1,33 @@
+ejercicios complejidad
+
+1)
+4
+6
+8
+
+
+2)
+f1)
+3+n+2.5n+2.5n+n/2
+3+6.5n
+O(n)
+
+f2)
+1+10000+50000+50000+10000
+O(1)
+
+f3)
+1+3n+1
+O(n)
+
+f4)
+2+2+2+3n+3n**2+4n**2
+O(n**2)
+
+f5)
+1+n+n+n+n+1
+O(n)
+
+3)
+a) consigue la meseta mas larga.
+b)
