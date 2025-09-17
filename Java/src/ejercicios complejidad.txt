@@ -34,10 +34,25 @@ los valores de la posicion tanto en j como en i son iguales, si es asi suma uno 
 el valor de j en el array deja de ser igual al valor de i en el array, la variable meseta pasa a ser igual a
 j menos i e i pasa a ser igual a j. luego compara que meseta sea mayor a maxMeseta y, si es asi, iguala maxMeseta a meseta.
 repite esto hasta que no haya un valor mas grande que maxMeseta y lo devuelve.
-b)
-
+b)2+2+1+2n+3n+6n+2n+3n+1n+1n+1n+1
+	19n+6
+	O(n)
+c) si, usando un for y teniendo una variable auxiliar.
+int mesetaMasLarga(vector<int>mesetas){
+    int aux=0, aux1=0;
+    for(int i=0;i<mesetas.size();i++){
+        if(mesetas[i]>aux){
+            aux=mesetas[i];
+            aux1=i;
+        }
+    }
+    return aux1;
+}
 
 4)
 1+200+100+100+200n+200n+100n+1
 402+500n
 
+5) 2+2+1n+2n+2n+1
+	5+5n
+	O(n)
