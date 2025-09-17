@@ -29,5 +29,15 @@ f5)
 O(n)
 
 3)
-a) consigue la meseta mas larga.
+a) busca mesetas por indice, i y j, con j valiendo uno mas que i. Desde ahi recorre el array y se fija si
+los valores de la posicion tanto en j como en i son iguales, si es asi suma uno a j. si en algun momento
+el valor de j en el array deja de ser igual al valor de i en el array, la variable meseta pasa a ser igual a
+j menos i e i pasa a ser igual a j. luego compara que meseta sea mayor a maxMeseta y, si es asi, iguala maxMeseta a meseta.
+repite esto hasta que no haya un valor mas grande que maxMeseta y lo devuelve.
 b)
+
+
+4)
+1+200+100+100+200n+200n+100n+1
+402+500n
+
