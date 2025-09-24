@@ -7,11 +7,13 @@ public class Ej6 {
         ArrayList<Integer> secuenciaNumeros=new ArrayList<>();
         secuenciaNumeros.add(1);
         secuenciaNumeros.add(2);
-        secuenciaNumeros.add(3);
+
         secuenciaNumeros.add(4);
         secuenciaNumeros.add(5);
-        secuenciaNumeros.add(6);
+        secuenciaNumeros.add(3);
         secuenciaNumeros.add(7);
+        secuenciaNumeros.add(6);
+
         System.out.println(elementosImpares(secuenciaNumeros));
 
 
@@ -19,13 +21,20 @@ public class Ej6 {
 
     public static int elementosImpares(ArrayList<Integer> lista){
         int j=0;
+        int max=0;
         for (int i = 0; i < lista.size(); i++) {
 
-            if(lista.get(i)%2==1){
+            if(!(i==lista.size()-1)&&lista.get(i)%2==1){
                 j++;
+                if(j>max){
+                    max=j;
+                }
+            }
+            else{
+                j=0;
             }
 
         }
-        return j;
+        return max;
     }
 }
