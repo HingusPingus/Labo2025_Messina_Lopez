@@ -23,12 +23,48 @@ public class Experto extends Participante implements Entrada, Principal{
     }
 
     @Override
-    public void cocinarServirEntrada() {
-
+    public Plato cocinarEntrada(Plato plato) {
+        try {
+            if((getTiempoLimite()-plato.getTiempoPreparacion())>0) {
+                System.out.println("cocine la entrada " + plato.getNombre() + " en " + plato.getTiempoPreparacion() + " minutos.");
+                setTiempoLimite(getTiempoLimite() - plato.getTiempoPreparacion());
+                return servirEntrada(plato);
+            }
+            else{
+                throw new NoTimeException("No tiene tiempo suficiente");
+            }
+        }
+        catch(NoTimeException n){
+            System.err.println(n);
+        }
+        return null;
     }
 
     @Override
-    public void cocinarServirPrincipal() {
+    public Plato cocinarPrincipal(Plato plato) {
+        try {
+            if((getTiempoLimite()-plato.getTiempoPreparacion())>0) {
+                System.out.println("cocine el plato principal " + plato.getNombre() + " en " + plato.getTiempoPreparacion() + " minutos.");
+                setTiempoLimite(getTiempoLimite() - plato.getTiempoPreparacion());
+                return servirPrincipal(plato);
+            }
+            else{
+                throw new NoTimeException("No tiene tiempo suficiente");
+            }
+        }
+        catch(NoTimeException n){
+            System.err.println(n);
+        }
+        return null;
+    }
 
+    @Override
+    public Plato servirEntrada(Plato plato) {
+        return plato;
+    }
+
+    @Override
+    public Plato servirPrincipal(Plato plato) {
+        return plato;
     }
 }

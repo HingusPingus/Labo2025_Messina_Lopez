@@ -31,7 +31,33 @@ public class Intermedio extends Participante implements Principal{
     }
 
     @Override
-    public void cocinarServirPrincipal() {
-
+    public Plato cocinarPrincipal(Plato plato) {
+        try{
+            for(Map.Entry<String, Integer> n:stockIngredientes.entrySet()){
+                for(Map.Entry<String, Integer> a:plato.getIngredientesNecesarios().entrySet()){
+                    if(a.getKey().equals(n.getKey())){
+                        if(n.getValue()>=a.getValue()){
+                            System.out.println("hice el plato principal "+plato.getNombre());
+                            n.setValue(n.getValue()-a.getValue());
+                            return servirPrincipal(plato);
+                        }
+                        else{
+                            throw new NoIngredientsException("no hay ingredientes suficientes");
+                        }
+                    }
+                    else{
+                        throw new NoIngredientsException("no esta el ingrediente");
+                    }
+                }
+            }
+        }
+        catch(NoIngredientsException n){
+            System.err.println(n);
+        }
+        return null;
+    }
+    @Override
+    public Plato servirPrincipal(Plato plato) {
+        return plato;
     }
 }

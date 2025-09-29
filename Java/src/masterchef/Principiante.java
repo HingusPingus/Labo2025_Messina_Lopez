@@ -2,6 +2,7 @@ package masterchef;
 
 import java.time.LocalDate;
 import java.util.HashSet;
+import java.util.Map;
 
 public class Principiante extends Participante implements Entrada{
     HashSet<String> ingredientesProhibidos;
@@ -28,7 +29,24 @@ public class Principiante extends Participante implements Entrada{
     }
 
     @Override
-    public void cocinarServirEntrada() {
-
+    public Plato cocinarEntrada(Plato plato) {
+        try{
+            for(String s:getIngredientesProhibidos()){
+                for(String a:plato.getIngredientesNecesarios().keySet()){
+                    if(s.equals(a)){
+                        throw new NoIngredientsException("usa ingredientes prohibidos");
+                    }
+                }
+            }
+            return servirEntrada(plato);
+        }
+        catch(NoIngredientsException n){
+            System.err.println(n);
+        }
+        return null;
+    }
+    @Override
+    public Plato servirEntrada(Plato plato) {
+        return plato;
     }
 }

@@ -1,5 +1,6 @@
 package masterchef;
 
 public interface Entrada {
-    void cocinarServirEntrada();
+    Plato cocinarEntrada(Plato plato);
+    Plato servirEntrada(Plato plato);
 }

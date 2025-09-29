@@ -1,5 +1,6 @@
 package masterchef;
 
 public interface Principal {
-    void cocinarServirPrincipal();
+    Plato cocinarPrincipal(Plato plato);
+    Plato servirPrincipal(Plato plato);
 }
